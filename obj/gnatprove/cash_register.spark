@@ -1,0 +1,650 @@
+{
+  "spark": [
+    {
+      "name": "CASH_REGISTER.payFuel",
+      "sloc": [
+        {
+          "file": "cash_register.ads",
+          "line": 31
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+      "sloc": [
+        {
+          "file": "cash_register.ads",
+          "line": 32
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "CASH_REGISTER",
+      "sloc": [
+        {
+          "file": "cash_register.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "cash_register.adb",
+      "line": 27,
+      "col": 45,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.payFuel",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 31
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__156.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 29,
+      "col": 13,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.payFuel",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 31
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__156.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 30,
+      "col": 25,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.payFuel",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 31
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__156.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.ads",
+      "line": 32,
+      "col": 48,
+      "rule": "INOUT_ONLY_READ",
+      "severity": "warning",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.ads",
+      "line": 32,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.ads",
+      "line": 32,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.ads",
+      "line": 32,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.ads",
+      "line": 32,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 63,
+      "col": 28,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 66,
+      "col": 30,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 66,
+      "col": 30,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 66,
+      "col": 30,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 66,
+      "col": 30,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 32
+          }
+        ]
+      },
+      "tracefile": "cash_register__flow__289.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "cash_register.adb",
+      "line": 23,
+      "col": 10,
+      "rule": "VC_RAISE",
+      "severity": "medium",
+      "entity": {
+        "name": "CASH_REGISTER.payFuel",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 31
+          }
+        ]
+      },
+      "cntexmp": {
+        "cash_register.adb": {
+          "19": [
+            {
+              "name": "id",
+              "value": "(others => 0)",
+              "kind": "variable"
+            }
+          ]
+        },
+        "cash_register.ads": {
+          "31": [
+            {
+              "name": "pumpUnit",
+              "value": "(ID => (others => 0), IS_USING => False, IS_PAID => False, PUMP_ACTIVE_FUEL => 0, PUMP_ACTIVE_STATE => 0, PUMP_NOZZLE_STATE => 0, PUMP_91 => (RESERVOIR_INFO => (TOTAL => ?, RESERVOIR_CATEGORY => 0), PUMP_STATE => 0, NOZZLE_STATE => 0, FUEL_TYPE => 0, others => ?), PUMP_95 => (RESERVOIR_INFO => (TOTAL => ?, RESERVOIR_CATEGORY => 0), PUMP_STATE => 0, NOZZLE_STATE => 0, FUEL_TYPE => 0, others => ?), PUMP_Diesel => (RESERVOIR_INFO => (TOTAL => ?, RESERVOIR_CATEGORY => 0), PUMP_STATE => 0, NOZZLE_STATE => 0, FUEL_TYPE => 0, others => ?), others => ?)",
+              "kind": "variable"
+            }
+          ]
+        }
+      },
+      "msg_id": 1,
+      "how_proved": "prover"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 43,
+      "col": 16,
+      "rule": "VC_RAISE",
+      "severity": "medium",
+      "entity": {
+        "name": "CASH_REGISTER.payFuel",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 31
+          }
+        ]
+      },
+      "cntexmp": {
+        "cash_register.adb": {
+          "19": [
+            {
+              "name": "id",
+              "value": "(others => 0)",
+              "kind": "variable"
+            }
+          ]
+        },
+        "cash_register.ads": {
+          "31": [
+            {
+              "name": "pumpUnit",
+              "value": "(ID => (others => 0), IS_USING => False, IS_PAID => False, PUMP_ACTIVE_FUEL => 0, PUMP_ACTIVE_STATE => 3, PUMP_NOZZLE_STATE => 0, PUMP_91 => (RESERVOIR_INFO => (TOTAL => ?, RESERVOIR_CATEGORY => 0), PUMP_STATE => 3, NOZZLE_STATE => 0, FUEL_TYPE => 0, others => ?), PUMP_95 => (RESERVOIR_INFO => (TOTAL => ?, RESERVOIR_CATEGORY => 0), PUMP_STATE => 3, NOZZLE_STATE => 0, FUEL_TYPE => 0, others => ?), PUMP_Diesel => (RESERVOIR_INFO => (TOTAL => ?, RESERVOIR_CATEGORY => 0), PUMP_STATE => 3, NOZZLE_STATE => 0, FUEL_TYPE => 0, others => ?), others => ?)",
+              "kind": "variable"
+            }
+          ]
+        }
+      },
+      "msg_id": 2,
+      "how_proved": "prover"
+    },
+    {
+      "file": "cash_register.adb",
+      "line": 26,
+      "col": 27,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "CASH_REGISTER.payFuel",
+        "sloc": [
+          {
+            "file": "cash_register.ads",
+            "line": 31
+          }
+        ]
+      },
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 5.99999986588955E-02
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.SET_IS_PAID",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 44
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP.SET_PUMPED",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 35
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.GET_ID",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 32
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.SET_PUMPED",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 47
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "sPrint.print_float_type",
+            "sloc": [
+              {
+                "file": "sprint.ads",
+                "line": 4
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP.SET_PUMP_STATE",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 34
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "sPrint.print",
+            "sloc": [
+              {
+                "file": "sprint.ads",
+                "line": 3
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.SET_TO_PAY",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.GET_TO_PAY",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "CASH_REGISTER.payFuel",
+          "sloc": [
+            {
+              "file": "cash_register.ads",
+              "line": 31
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.GET_PUMPED",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 34
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "PUMP_UNIT.GET_PUMPED",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 34
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.GET_ID",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 32
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "PUMP_UNIT.GET_ID",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 32
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.GET_FUEL",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 35
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "PUMP_UNIT.GET_FUEL",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 35
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "sPrint.print",
+            "sloc": [
+              {
+                "file": "sprint.ads",
+                "line": 3
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "sPrint.print",
+            "sloc": [
+              {
+                "file": "sprint.ads",
+                "line": 3
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "PUMP_UNIT.GET_TO_PAY",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "PUMP_UNIT.GET_TO_PAY",
+            "sloc": [
+              {
+                "file": "pump_unit.ads",
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "CASH_REGISTER.SET_PUMPED_INFO_TO_CASH_REGISTER",
+          "sloc": [
+            {
+              "file": "cash_register.ads",
+              "line": 32
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "CASH_REGISTER",
+          "sloc": [
+            {
+              "file": "cash_register.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

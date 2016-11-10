@@ -1,0 +1,32 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\JackyChang\Desktop\421A1\modellingpump.gpr
+20161108055650
+[BOUND OBJECT FILES]
+C:\Users\JackyChang\Desktop\421A1\obj\Cash_Register_Object.o
+C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Objects.o
+C:\Users\JackyChang\Desktop\421A1\obj\sPrint.o
+C:\Users\JackyChang\Desktop\421A1\obj\Send_Pump_Info_To_CashRegister_Task.o
+C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Setup_Task.o
+C:\Users\JackyChang\Desktop\421A1\obj\Pay_Task.o
+C:\Users\JackyChang\Desktop\421A1\obj\cash_register.o
+C:\Users\JackyChang\Desktop\421A1\obj\pump_unit.o
+C:\Users\JackyChang\Desktop\421A1\obj\pump.o
+C:\Users\JackyChang\Desktop\421A1\obj\TaskRunner.o
+C:\Users\JackyChang\Desktop\421A1\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\JackyChang\Desktop\421A1\obj\
+-LC:\Users\JackyChang\Desktop\421A1\obj\
+-LC:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/
+-static
+-static-libgcc
+C:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/libgnarl.a
+C:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

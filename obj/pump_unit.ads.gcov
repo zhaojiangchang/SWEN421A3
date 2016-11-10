@@ -1,0 +1,82 @@
+        -:    0:Source:C:/Users/JackyChang/Documents/421A1/src/pump_unit.ads
+        -:    0:Programs:38
+        -:    1:with PUMP;
+        -:    2:
+        -:    3:package PUMP_UNIT
+        -:    4:with SPARK_Mode is
+        -:    5:   --     type PUMP_UNIT is private;
+        -:    6:
+        -:    7:   type FLOAT_NUMBER is delta 0.01 digits 10;
+        -:    8:   subtype UNIT_ID_TYPE is String(1..6);
+        -:    9:   --     package P is new PUMP;
+        -:   10:   use all type PUMP.NOZZLE_TYPE;
+        -:   11:   use all type PUMP.FLOAT_NUMBER;
+        -:   12:   use all type PUMP.STATE_TYPE;
+        -:   13:
+        2:   14:   type PUMP_UNIT is
+        -:   15:      record
+        -:   16:         ID: UNIT_ID_TYPE:="      ";
+        -:   17:         IS_USING: Boolean:=False;
+        -:   18:         IS_PAID: Boolean:=True;
+        -:   19:         TO_PAY: PUMP.FLOAT_NUMBER:=0.00;
+        -:   20:         PUMPED: PUMP.FLOAT_NUMBER:=0.00;
+        -:   21:         PUMP_ACTIVE_FUEL: PUMP.FUEL_TYPES:=PUMP.U91;
+        -:   22:         PUMP_ACTIVE_STATE: PUMP.STATE_TYPE:=PUMP.Base;
+        -:   23:         PUMP_NOZZLE_STATE: PUMP.NOZZLE_TYPE:=PUMP.NozzleBase;
+        2:   24:         PUMP_91: PUMP.PUMP;
+        2:   25:         PUMP_95: PUMP.PUMP;
+        2:   26:         PUMP_Diesel: PUMP.PUMP;
+        -:   27:      end record;
+        -:   28:
+        -:   29:   --function
+        -:   30:   function GET_PUMP(pumpUnit: in PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES) return PUMP.PUMP;
+        -:   31:   function GET_TANKS_SIZE(pumpUnit: in PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES) return PUMP.FLOAT_NUMBER;
+        -:   32:   function GET_ID(pumpUnit: in PUMP_UNIT) return UNIT_ID_TYPE;
+        -:   33:   function GET_TO_PAY(pumpUnit: in PUMP_UNIT) return PUMP.FLOAT_NUMBER;
+        -:   34:   function GET_PUMPED(pumpUnit: in PUMP_UNIT) return PUMP.FLOAT_NUMBER;
+        -:   35:   function GET_FUEL(pumpUnit: in PUMP_UNIT) return PUMP.FUEL_TYPES;
+        -:   36:   function UNIT_IS_USING(pumpUnit: in PUMP_UNIT) return Boolean;
+        -:   37:   function UNIT_IS_PAID(pumpUnit: in PUMP_UNIT) return Boolean;
+        -:   38:   function GET_PUMP_UNIT_STATE(pumpUnit: in PUMP_UNIT)return PUMP.STATE_TYPE;
+        -:   39:   function GET_PUMP_NOZZLE_STATE(pumpUnit: in PUMP_UNIT) return PUMP.NOZZLE_TYPE;
+        -:   40:
+        -:   41:   --procedure
+        -:   42:
+        -:   43:   procedure SET_IS_USING(pumpUnit: in out PUMP_UNIT);
+        -:   44:   procedure SET_IS_PAID(pumpUnit: in out PUMP_UNIT);
+        -:   45:   procedure SET_TO_PAY(pumpUnit: in out PUMP_UNIT; AMOUNT: in PUMP.FLOAT_NUMBER);
+        -:   46:   procedure SET_UNIT_ID(pumpUnit: in out PUMP_UNIT; ID: in UNIT_ID_TYPE);
+        -:   47:   procedure SET_PUMPED(pumpUnit: in out PUMP_UNIT;  AMOUNT: in PUMP.FLOAT_NUMBER);
+        -:   48:   procedure SET_PUMP_ACTIVE_STATE(pumpUnit: in out PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES; stateType: in PUMP.STATE_TYPE);
+        -:   49:   procedure SET_PUMP_NOZZLE_STATE(pumpUnit: in out PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES; nozzleType: in PUMP.NOZZLE_TYPE);
+        -:   50:
+        -:   51:   procedure ADD_PUMP(pumpUnit: in out PUMP_UNIT;pump_r : in out PUMP.PUMP; fuelType: in PUMP.FUEL_TYPES);
+        -:   52:
+        -:   53:   procedure LEFT_NOZZLE (pumpUnit: in out PUMP_UNIT; pump_r : in out PUMP.PUMP; fuelType: in PUMP.FUEL_TYPES)
+        -:   54:     with
+        -:   55:       Pre => (PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 0 or PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 3),
+        -:   56:     Post => (pumpUnit.PUMP_ACTIVE_STATE = PUMP.Ready);
+        -:   57:
+        -:   58:   procedure RETURN_NOZZLE (pumpUnit: in out PUMP_UNIT; pump_r : in out PUMP.PUMP)
+        -:   59:     with
+        -:   60:       Pre => ((PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 1
+        -:   61:               or PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 3)
+        -:   62:               and PUMP.NOZZLE_TYPE'Pos(PUMP.GET_CURRENT_NOZZLE_STATE(pump_r))=5),
+        -:   63:
+        -:   64:     Post => (pumpUnit.PUMP_ACTIVE_STATE = PUMP.Waiting or pumpUnit.PUMP_ACTIVE_STATE = PUMP.Base);
+        -:   65:
+        -:   66:
+        -:   67:   procedure START_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in PUMP.FLOAT_NUMBER; CAR_TANK_SPACE: in out PUMP.FLOAT_NUMBER)
+        -:   68:     with
+        -:   69:       Pre => (PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 1 and PUMP.NOZZLE_TYPE'Pos(PUMP.GET_CURRENT_NOZZLE_STATE(pump_r))=1),
+        -:   70:     Post => (pumpUnit.PUMP_ACTIVE_STATE = PUMP.Ready);
+        -:   71:
+        -:   72:   procedure STOP_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r : in out PUMP.PUMP)
+        -:   73:     with
+        -:   74:       Pre => (PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 2 and PUMP.NOZZLE_TYPE'Pos(PUMP.GET_CURRENT_NOZZLE_STATE(pump_r)) =3),
+        -:   75:     Post => (pumpUnit.PUMP_NOZZLE_STATE = PUMP.Stop and pumpUnit.PUMP_ACTIVE_STATE = PUMP.Ready);
+        -:   76:
+        -:   77:
+        -:   78:private
+        -:   79:
+        -:   80:end PUMP_UNIT;

@@ -1,0 +1,3 @@
+cash_register.adb:23:10: medium: exception might be raised[#1]
+cash_register.adb:43:16: medium: exception might be raised[#2]
+cash_register.ads:32:48: warning: "pumpUnit" is not modified, could be IN[#0]

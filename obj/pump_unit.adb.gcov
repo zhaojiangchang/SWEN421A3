@@ -1,0 +1,434 @@
+        -:    0:Source:C:/Users/JackyChang/Documents/421A1/src/pump_unit.adb
+        -:    0:Programs:38
+        -:    1:with sPrint; use sPrint;
+        -:    2:with PUMP;
+        -:    3:with Ada.Exceptions;
+        -:    4:package body PUMP_UNIT
+        -:    5:with SPARK_Mode is
+        -:    6:   --------------
+        -:    7:   -- ADD_PUMP --
+        -:    8:   --------------
+        -:    9:
+        2:   10:   procedure ADD_PUMP(pumpUnit: in out PUMP_UNIT; pump_r : in out PUMP.PUMP; fuelType: in PUMP.FUEL_TYPES) is
+        -:   11:      --        p91 : PUMP;
+        -:   12:      --        p95 : PUMP;
+        -:   13:      --        pDiesel : PUMP;
+        -:   14:
+        -:   15:      nozzleStateType: PUMP.NOZZLE_TYPE;
+        -:   16:      baseStateType: PUMP.STATE_TYPE;
+        -:   17:   begin
+        2:   18:      baseStateType:= PUMP.STATE_TYPE'val(0);
+        2:   19:      nozzleStateType := PUMP.NOZZLE_TYPE'val(0);
+        -:   20:
+        2:   21:      case fuelType is
+        -:   22:         when PUMP.U91 =>
+        2:   23:            print("add pump: 91");
+        2:   24:            PUMP.SET_FUEL_PRICE(pump_r,1.80);
+        2:   25:            PUMP.SET_PUMP_STATE(pump_r,baseStateType);
+        2:   26:            PUMP.APPEND_RESERVOIR(pump_r,fuelType);
+        2:   27:            PUMP.SET_RESERVOIR_SIZE(pump_r, 1000.00);
+        2:   28:            pumpUnit.PUMP_91 := pump_r;
+        2:   29:            pumpUnit.IS_USING := False;
+        2:   30:            pumpUnit.IS_PAID := True;
+        2:   31:            pumpUnit.TO_PAY:= 0.00;
+        2:   32:            pumpUnit.PUMPED:=0.00;
+        2:   33:            pumpUnit.PUMP_ACTIVE_STATE :=baseStateType;
+        2:   34:            pumpUnit.PUMP_NOZZLE_STATE := nozzleStateType;
+        2:   35:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r, nozzleStateType);
+        -:   36:         when PUMP.U95 =>
+    #####:   37:            print("add pump: 95");
+    #####:   38:            PUMP.SET_FUEL_PRICE(pump_r,2.10);
+    #####:   39:            PUMP.SET_PUMP_STATE(pump_r,baseStateType);
+    #####:   40:            PUMP.APPEND_RESERVOIR(pump_r, fuelType);
+    #####:   41:            PUMP.SET_RESERVOIR_SIZE(pump_r, 1000.00);
+    #####:   42:            pumpUnit.PUMP_95 := pump_r;
+    #####:   43:            pumpUnit.IS_USING := False;
+    #####:   44:            pumpUnit.IS_PAID := True;
+    #####:   45:            pumpUnit.TO_PAY:= 0.00;
+    #####:   46:            pumpUnit.PUMPED:=0.00;
+    #####:   47:            pumpUnit.PUMP_ACTIVE_STATE :=baseStateType;
+    #####:   48:            pumpUnit.PUMP_NOZZLE_STATE := nozzleStateType;
+    #####:   49:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r, nozzleStateType);
+        -:   50:         when PUMP.Diesel =>
+    #####:   51:            print("add pump: Diesel");
+    #####:   52:            PUMP.SET_FUEL_PRICE(pump_r,1.10);
+    #####:   53:            PUMP.SET_PUMP_STATE(pump_r,baseStateType);
+    #####:   54:            PUMP.APPEND_RESERVOIR(pump_r, fuelType);
+    #####:   55:            PUMP.SET_RESERVOIR_SIZE(pump_r, 1000.00);
+    #####:   56:            pumpUnit.PUMP_Diesel := pump_r;
+    #####:   57:            pumpUnit.IS_USING := False;
+    #####:   58:            pumpUnit.IS_PAID := True;
+    #####:   59:            pumpUnit.TO_PAY:= 0.00;
+    #####:   60:            pumpUnit.PUMPED:=0.00;
+    #####:   61:            pumpUnit.PUMP_ACTIVE_STATE :=baseStateType;
+    #####:   62:            pumpUnit.PUMP_NOZZLE_STATE := nozzleStateType;
+    #####:   63:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r, nozzleStateType);
+        -:   64:
+        2:   65:      end case;
+        2:   66:      print("");
+        2:   67:   end ADD_PUMP;
+        -:   68:   --------------------
+        -:   69:   -- SET_PUMPED --
+        -:   70:   --------------------
+        2:   71:   procedure SET_PUMPED(pumpUnit: in out PUMP_UNIT;  AMOUNT: in PUMP.FLOAT_NUMBER)
+        -:   72:   is
+        -:   73:   begin
+        2:   74:      pumpUnit.PUMPED := AMOUNT;
+        2:   75:   end SET_PUMPED;
+        -:   76:
+        -:   77:   --------------------
+        -:   78:   -- SET_PUMPED --
+        -:   79:   --------------------
+        2:   80:   procedure SET_TO_PAY(pumpUnit: in out PUMP_UNIT;  AMOUNT: in PUMP.FLOAT_NUMBER)
+        -:   81:   is
+        -:   82:   begin
+        2:   83:      pumpUnit.TO_PAY := AMOUNT;
+        2:   84:   end SET_TO_PAY;
+        -:   85:
+        -:   86:   --------------------
+        -:   87:   -- GET_PUMP --
+        -:   88:   --------------------
+    #####:   89:   function GET_PUMP(pumpUnit: in PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES) return PUMP.PUMP
+        -:   90:   is
+        -:   91:   begin
+    #####:   92:      case fuelType is
+    #####:   93:         when PUMP.U91 => return pumpUnit.PUMP_91;
+    #####:   94:         when PUMP.U95 => return pumpUnit.PUMP_95;
+    #####:   95:         when PUMP.Diesel => return pumpUnit.PUMP_Diesel;
+        -:   96:      end case;
+        -:   97:   end GET_PUMP;
+        -:   98:
+        -:   99:   --------------------
+        -:  100:   -- GET TANK SIZE --
+        -:  101:   --------------------
+        -:  102:
+    #####:  103:   function GET_TANKS_SIZE(pumpUnit: in PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES) return PUMP.FLOAT_NUMBER
+        -:  104:   is
+        -:  105:   begin
+    #####:  106:      case fuelType is
+    #####:  107:         when PUMP.U91 => return PUMP.GET_TANKS_SIZE(pumpUnit.PUMP_91);
+    #####:  108:         when PUMP.U95 => return PUMP.GET_TANKS_SIZE(pumpUnit.PUMP_95);
+    #####:  109:         when PUMP.Diesel => return PUMP.GET_TANKS_SIZE(pumpUnit.PUMP_Diesel);
+        -:  110:      end case;
+        -:  111:   end GET_TANKS_SIZE;
+        -:  112:
+        -:  113:   --------------------
+        -:  114:   -- GET ID ----------
+        -:  115:   --------------------
+        6:  116:   function GET_ID(pumpUnit: in PUMP_UNIT) return UNIT_ID_TYPE
+        -:  117:   is
+        -:  118:   begin
+        6:  119:      return pumpUnit.ID;
+        -:  120:   end GET_ID;
+        -:  121:
+        -:  122:   --------------------
+        -:  123:   -- GET TO PAY ------
+        -:  124:   --------------------
+        8:  125:   function GET_TO_PAY(pumpUnit: in PUMP_UNIT) return PUMP.FLOAT_NUMBER
+        -:  126:   is
+        -:  127:   begin
+        8:  128:      return pumpUnit.TO_PAY;
+        -:  129:   end GET_TO_PAY;
+        -:  130:
+        -:  131:   --------------------
+        -:  132:   -- GET PUMPED ------
+        -:  133:   --------------------
+        4:  134:   function GET_PUMPED(pumpUnit: in PUMP_UNIT) return PUMP.FLOAT_NUMBER
+        -:  135:   is
+        -:  136:   begin
+        4:  137:      return pumpUnit.PUMPED;
+        -:  138:   end GET_PUMPED;
+        -:  139:
+        -:  140:   --------------------
+        -:  141:   -- GET FUEL   ------
+        -:  142:   --------------------
+        4:  143:   function GET_FUEL(pumpUnit: in PUMP_UNIT) return PUMP.FUEL_TYPES
+        -:  144:   is
+        -:  145:   begin
+        4:  146:      return pumpUnit.PUMP_ACTIVE_FUEL;
+        -:  147:   end GET_FUEL;-----------------------
+        -:  148:   -- SET_IS_USING False--
+        -:  149:   -----------------------
+    #####:  150:   procedure SET_IS_USING(pumpUnit: in out PUMP_UNIT)
+        -:  151:   is
+        -:  152:      use all type PUMP.STATE_TYPE;
+        -:  153:      baseStateType: PUMP.STATE_TYPE;
+        -:  154:
+        -:  155:   begin
+    #####:  156:      baseStateType:= PUMP.STATE_TYPE'val(0);
+    #####:  157:      if PUMP.GET_STATE(pumpUnit.PUMP_91) = baseStateType and PUMP.GET_STATE(pumpUnit.PUMP_95) =baseStateType and PUMP.GET_STATE(pumpUnit.PUMP_Diesel) = baseStateType  then
+    #####:  158:         pumpUnit.IS_USING := False;
+    #####:  159:         print("set pump unit initial is used to false ");
+        -:  160:      end if;
+    #####:  161:   end SET_IS_USING;
+        -:  162:   -----------------------
+        -:  163:   -- SET_IS_Paid true  --
+        -:  164:   -----------------------
+        2:  165:   procedure SET_IS_PAID(pumpUnit: in out PUMP_UNIT)
+        -:  166:   is
+        -:  167:      use all type PUMP.STATE_TYPE;
+        -:  168:      baseStateType: PUMP.STATE_TYPE;
+        -:  169:   begin
+        2:  170:      if(pumpUnit.IS_PAID = False) then
+    #####:  171:         baseStateType:= PUMP.STATE_TYPE'val(0);
+    #####:  172:         if PUMP.GET_STATE(pumpUnit.PUMP_91) = baseStateType and PUMP.GET_STATE(pumpUnit.PUMP_95) = baseStateType and PUMP.GET_STATE(pumpUnit.PUMP_Diesel) =  baseStateType then
+    #####:  173:            pumpUnit.IS_PAID := True;
+    #####:  174:            print("set pump unit initial is paid to true ");
+        -:  175:         end if;
+        -:  176:      else
+        2:  177:         pumpUnit.IS_PAID := False;
+        -:  178:      end if;
+        2:  179:   end SET_IS_PAID;
+        -:  180:   -----------------------
+        -:  181:   -- SET_UNIT_ID  --
+        -:  182:   -----------------------
+        2:  183:   procedure SET_UNIT_ID(pumpUnit: in out PUMP_UNIT; ID: in UNIT_ID_TYPE)
+        -:  184:   is
+        -:  185:   begin
+        2:  186:      pumpUnit.ID := ID;
+        2:  187:   end SET_UNIT_ID;
+        -:  188:   -----------------------
+        -:  189:   -- SET_PUMP_ACTIVE  --
+        -:  190:   -----------------------
+    #####:  191:   procedure SET_PUMP_ACTIVE_STATE(pumpUnit: in out PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES; stateType: in PUMP.STATE_TYPE)
+        -:  192:   is
+        -:  193:   begin
+    #####:  194:      if PUMP.FUEL_TYPES'Pos(fuelType) =0 then
+    #####:  195:         pumpUnit.PUMP_ACTIVE_FUEL := fuelType;
+    #####:  196:         PUMP.SET_PUMP_STATE(pumpUnit.PUMP_91,stateType);
+    #####:  197:      elsif PUMP.FUEL_TYPES'Pos(fuelType) = 1 then
+    #####:  198:         pumpUnit.PUMP_ACTIVE_FUEL :=fuelType;
+    #####:  199:         PUMP.SET_PUMP_STATE(pumpUnit.PUMP_95,stateType);
+    #####:  200:      elsif PUMP.FUEL_TYPES'Pos(fuelType) = 2 then
+    #####:  201:         pumpUnit.PUMP_ACTIVE_FUEL := fuelType;
+    #####:  202:         PUMP.SET_PUMP_STATE(pumpUnit.PUMP_Diesel, stateType);
+        -:  203:      end if;
+        -:  204:
+    #####:  205:   end SET_PUMP_ACTIVE_STATE;
+        -:  206:   -----------------------
+        -:  207:   -- SET_PUMP_NOZZLE_STATE_ACTIVE  --
+        -:  208:   -----------------------
+    #####:  209:   procedure SET_PUMP_NOZZLE_STATE(pumpUnit: in out PUMP_UNIT; fuelType: in PUMP.FUEL_TYPES; nozzleType: in PUMP.NOZZLE_TYPE)
+        -:  210:   is
+        -:  211:   begin
+    #####:  212:      if PUMP.FUEL_TYPES'Pos(fuelType) =0 then
+    #####:  213:         PUMP.SET_PUMP_NOZZLE_STATE(pumpUnit.PUMP_91, nozzleType);
+    #####:  214:         pumpUnit.PUMP_NOZZLE_STATE := nozzleType;
+    #####:  215:      elsif PUMP.FUEL_TYPES'Pos(fuelType) = 1 then
+    #####:  216:         PUMP.SET_PUMP_NOZZLE_STATE(pumpUnit.PUMP_95, nozzleType);
+    #####:  217:         pumpUnit.PUMP_NOZZLE_STATE := nozzleType;
+    #####:  218:      elsif PUMP.FUEL_TYPES'Pos(fuelType) = 2 then
+    #####:  219:         PUMP.SET_PUMP_NOZZLE_STATE(pumpUnit.PUMP_Diesel, nozzleType);
+    #####:  220:         pumpUnit.PUMP_NOZZLE_STATE := nozzleType;
+        -:  221:      end if;
+        -:  222:
+    #####:  223:   end SET_PUMP_NOZZLE_STATE;
+        -:  224:
+        -:  225:   -----------------------
+        -:  226:   -- UNIT_IS_USING     --
+        -:  227:   -----------------------
+    #####:  228:   function UNIT_IS_USING(pumpUnit: in PUMP_UNIT) return Boolean
+        -:  229:   is
+        -:  230:   begin
+    #####:  231:      return pumpUnit.IS_USING;
+        -:  232:   end UNIT_IS_USING;
+        -:  233:
+        -:  234:   -----------------------
+        -:  235:   -- UNIT_IS_PAID      --
+        -:  236:   -----------------------
+    #####:  237:   function UNIT_IS_PAID(pumpUnit: in PUMP_UNIT) return Boolean
+        -:  238:   is
+        -:  239:   begin
+    #####:  240:      return pumpUnit.IS_PAID;
+        -:  241:   end UNIT_IS_PAID;
+        -:  242:
+        -:  243:   -----------------------
+        -:  244:   -- GET_PUMP_UNIT_STATE      --
+        -:  245:   -----------------------
+    #####:  246:   function GET_PUMP_UNIT_STATE(pumpUnit: in PUMP_UNIT) return PUMP.STATE_TYPE
+        -:  247:   is
+        -:  248:   begin
+    #####:  249:      return pumpUnit.PUMP_ACTIVE_STATE;
+        -:  250:   end GET_PUMP_UNIT_STATE;
+        -:  251:
+        -:  252:   -----------------------
+        -:  253:   -- GET_PUMP_NOZZLE_STATE      --
+        -:  254:   -----------------------
+    #####:  255:   function GET_PUMP_NOZZLE_STATE(pumpUnit: in PUMP_UNIT) return PUMP.NOZZLE_TYPE
+        -:  256:   is
+        -:  257:   begin
+    #####:  258:      return pumpUnit.PUMP_NOZZLE_STATE;
+        -:  259:   end GET_PUMP_NOZZLE_STATE;
+        -:  260:
+        -:  261:   -----------------------
+        -:  262:   --   LEFT_NOZZLE     --
+        -:  263:   -----------------------
+        4:  264:   procedure LEFT_NOZZLE (pumpUnit: in out PUMP_UNIT; pump_r : in out PUMP.PUMP; fuelType: in PUMP.FUEL_TYPES) is
+        4:  265:      liftNozzleException : Exception;
+        -:  266:   begin
+        4:  267:      if PUMP.STATE_TYPE'Image(pumpUnit.PUMP_ACTIVE_STATE) = "BASE" then
+        4:  268:         pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(1);
+        4:  269:         pumpUnit.PUMP_ACTIVE_FUEL:= fuelType;
+        4:  270:         pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(1);
+        4:  271:         PUMP.SET_PUMP_STATE(pump_r, PUMP.STATE_TYPE'Val(1));
+        4:  272:         PUMP.SET_PUMP_NOZZLE_STATE(pump_r,  PUMP.NOZZLE_TYPE'Val(1));
+        4:  273:         print("left node from base state");
+    #####:  274:      elsif PUMP.STATE_TYPE'Image(pumpUnit.PUMP_ACTIVE_STATE) = "WAITING" and PUMP.STATE_TYPE'Image(PUMP.GET_STATE(pump_r)) = "WAITING" then
+    #####:  275:         pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(1);
+    #####:  276:         pumpUnit.PUMP_ACTIVE_FUEL := fuelType;
+    #####:  277:         pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(1);
+    #####:  278:         PUMP.SET_PUMP_STATE(pump_r, PUMP.STATE_TYPE'Val(1));
+    #####:  279:         PUMP.SET_PUMP_NOZZLE_STATE(pump_r,  PUMP.NOZZLE_TYPE'Val(1));
+    #####:  280:         print("left node from waiting state");
+        -:  281:      else
+    #####:  282:         print("your are not allow use more then one nozzle at same time");
+    #####:  283:         Raise liftNozzleException;
+        -:  284:      end if;
+        4:  285:   end LEFT_NOZZLE;
+        -:  286:   -----------------------
+        -:  287:   --   RETURN_NOZZLE   --
+        -:  288:   -----------------------
+        4:  289:   procedure RETURN_NOZZLE (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP) is
+        -:  290:      due: PUMP.FLOAT_NUMBER;
+        -:  291:      use all type PUMP.FLOAT_NUMBER;
+        4:  292:      returnNozzleException : Exception;
+        -:  293:   begin
+        4:  294:      due:=0.00;
+        4:  295:      if PUMP.STATE_TYPE'Image(pumpUnit.PUMP_ACTIVE_STATE) = "READY" and PUMP.STATE_TYPE'Image(PUMP.GET_STATE(pump_r)) = "READY" then
+        4:  296:         if pumpUnit.TO_PAY > due then
+        4:  297:            pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(3);
+        4:  298:            pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(2);
+        4:  299:            PUMP.SET_PUMP_STATE(pump_r, PUMP.STATE_TYPE'Val(3));
+        4:  300:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r,  PUMP.NOZZLE_TYPE'Val(2));
+        4:  301:            print_float_type("return nozzle to waiting state TO_PAY: ", pumpUnit.TO_PAY);
+        -:  302:         else
+    #####:  303:            pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(0);
+    #####:  304:            pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(0);
+    #####:  305:            PUMP.SET_PUMP_STATE(pump_r, PUMP.STATE_TYPE'Val(0));
+    #####:  306:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r,  PUMP.NOZZLE_TYPE'Val(0));
+    #####:  307:            print("return nozzle to base state TO_PAY = 0");
+        -:  308:         end if;
+        -:  309:      else
+    #####:  310:         print("you are not supports not to use this nozzle other nozzle currently in use");
+        -:  311:
+    #####:  312:         Raise returnNozzleException;
+        -:  313:      end if;
+        4:  314:   end RETURN_NOZZLE;
+        -:  315:   -----------------------
+        -:  316:   --   START_PUMPING   --
+        -:  317:   -----------------------
+        6:  318:   procedure START_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in PUMP.FLOAT_NUMBER; CAR_TANK_SPACE: in out PUMP.FLOAT_NUMBER)
+        -:  319:   is
+        -:  320:      use all type PUMP.FLOAT_NUMBER;
+        -:  321:      tankSize: PUMP.FLOAT_NUMBER;
+        -:  322:      pumped: PUMP.FLOAT_NUMBER;
+        -:  323:      SENSOR: Boolean;
+        -:  324:      temp: PUMP.FLOAT_NUMBER;
+        6:  325:      startPumpingException : Exception;
+        -:  326:
+        -:  327:   begin
+        6:  328:      temp:=0.00;
+        6:  329:      pumped:=0.00;
+        6:  330:      SENSOR := False;
+        6:  331:      if pumpUnit.PUMP_ACTIVE_STATE = PUMP.ready  and pump_r.PUMP_STATE = PUMP.Ready then
+        6:  332:         tankSize :=  PUMP.GET_TANKS_SIZE(pump_r);
+        6:  333:         print_float_type("tank size: ", tankSize);
+        6:  334:         if tankSize <= 0.00 then
+    #####:  335:            print("tank empty");
+    #####:  336:            Raise startPumpingException;
+        -:  337:         end if;
+        6:  338:         if CAR_TANK_SPACE = 0.00 then
+    #####:  339:            print("car tank full can not pumping");
+    #####:  340:            Raise startPumpingException;
+        -:  341:         end if;
+        6:  342:         if AMOUNT >0.00 and SENSOR = False and tankSize > temp then
+        6:  343:            pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(2);
+        6:  344:            pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(3);
+        6:  345:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r, PUMP.NOZZLE_TYPE'Val(3));
+        6:  346:            PUMP.SET_PUMP_STATE(pump_r,PUMP.STATE_TYPE'Val(2));
+     1410:  347:            while CAR_TANK_SPACE>0.00 and tankSize >temp and SENSOR = False and pumped <= AMOUNT loop
+     1404:  348:               pumped:= pumped +0.01;
+     1404:  349:               pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.01 ;
+     1404:  350:               pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.01 * PUMP.GET_UNIT_PRICE(pump_r));
+     1404:  351:               if CAR_TANK_SPACE -0.01 >0.00 then
+     1400:  352:                  CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.01;
+        -:  353:               else
+        4:  354:                  SENSOR := True;
+        4:  355:                  STOP_PUMPING(pumpUnit, pump_r);
+        -:  356:               end if;
+        -:  357:               --                 print_float_type("pumping: " , pumped);
+        -:  358:               --                 print_float_type("car tank space left: ",CAR_TANK_SPACE);
+        -:  359:               --                 print_float_type("Amount To Pay: ", pumpUnit.TO_PAY);
+     1404:  360:               PUMP.REMOVE_PETROL_RESERVOIR(pump_r,0.01);
+     1404:  361:               tankSize := PUMP.GET_TANKS_SIZE(pump_r);
+     1404:  362:               if tankSize <= 0.00 then
+    #####:  363:                  STOP_PUMPING(pumpUnit, pump_r);
+    #####:  364:                  print("tank empty stop pumping");
+     1404:  365:               elsif pumped>= AMOUNT then
+        2:  366:                  print("pumped given amount");
+        2:  367:                  STOP_PUMPING(pumpUnit, pump_r);
+        -:  368:               end if;
+     1404:  369:            end loop;
+        -:  370:
+        -:  371:         end if;
+        6:  372:         if AMOUNT =0.00 and SENSOR = False and tankSize > temp then
+    #####:  373:            pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(3);
+    #####:  374:            pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(2);
+    #####:  375:            PUMP.SET_PUMP_NOZZLE_STATE(pump_r, PUMP.NOZZLE_TYPE'Val(3));
+    #####:  376:            PUMP.SET_PUMP_STATE(pump_r,PUMP.STATE_TYPE'Val(2));
+    #####:  377:            if tankSize <= 0.00 then
+    #####:  378:               print("tank empty");
+    #####:  379:               Raise startPumpingException;
+        -:  380:            end if;
+    #####:  381:            if CAR_TANK_SPACE <= 0.00 then
+    #####:  382:               print("car tank full can not pumping");
+    #####:  383:               Raise startPumpingException;
+        -:  384:            end if;
+    #####:  385:            while SENSOR = False and tankSize > 0.00 loop
+        -:  386:
+        -:  387:               --                 pumped:= pumped +0.01;
+    #####:  388:               pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.01 ;
+    #####:  389:               pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.01 * PUMP.GET_UNIT_PRICE(pump_r));
+    #####:  390:               if CAR_TANK_SPACE -0.01 >0.00 then
+    #####:  391:                  CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.01;
+        -:  392:               else
+    #####:  393:                  SENSOR := True;
+    #####:  394:                  STOP_PUMPING(pumpUnit, pump_r);
+        -:  395:               end if;
+        -:  396:               --                 print_float_type("pumping: " , pumped);
+        -:  397:               --                 print_float_type("car tank space left: ",CAR_TANK_SPACE);
+        -:  398:               --                 print_float_type("Amount To Pay: ", pumpUnit.TO_PAY);               PUMP.REMOVE_PETROL_RESERVOIR(pump_r,0.01);
+    #####:  399:               tankSize := PUMP.GET_TANKS_SIZE(pump_r);
+    #####:  400:               if tankSize <= 0.00 then
+    #####:  401:                  STOP_PUMPING(pumpUnit, pump_r);
+    #####:  402:                  print("tank empty stop pumping");
+        -:  403:               end if;
+    #####:  404:            end loop;
+        -:  405:         end if;
+        -:  406:      else
+    #####:  407:         print("you can not pumping - only ready state -> pumping");
+        -:  408:
+    #####:  409:         Raise startPumpingException;
+        -:  410:
+        -:  411:      end if;
+        6:  412:   end START_PUMPING;
+        -:  413:   -----------------------
+        -:  414:   --   STOP_PUMPING   --
+        -:  415:   -----------------------
+        6:  416:   procedure STOP_PUMPING(pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP) is
+        6:  417:      stopPumpingException : Exception;
+        -:  418:   begin
+        6:  419:      if PUMP.STATE_TYPE'Image(pumpUnit.PUMP_ACTIVE_STATE) = "PUMPING"  and PUMP.STATE_TYPE'Image(PUMP.GET_STATE(pump_r)) = "PUMPING" then
+        6:  420:         pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(1);
+        6:  421:         pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(4);
+        6:  422:         PUMP.SET_PUMP_STATE(pump_r,PUMP.STATE_TYPE'Val(1));
+        6:  423:         PUMP.SET_PUMP_NOZZLE_STATE(pump_r, PUMP.NOZZLE_TYPE'Val(4));
+        6:  424:         print("stop pumping");
+        -:  425:      else
+    #####:  426:         Raise stopPumpingException;
+        -:  427:
+        -:  428:      end if;
+        -:  429:
+        6:  430:   end STOP_PUMPING;
+        -:  431:
+        -:  432:end PUMP_UNIT;

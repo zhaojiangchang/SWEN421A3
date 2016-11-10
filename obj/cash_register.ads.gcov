@@ -1,0 +1,36 @@
+        -:    0:Source:C:/Users/JackyChang/Documents/421A1/src/cash_register.ads
+        -:    0:Programs:38
+        -:    1:with PUMP_UNIT;
+        -:    2:with PUMP;
+        -:    3:package CASH_REGISTER
+        -:    4:
+        -:    5:with SPARK_Mode is
+        -:    6:   --     type PUMP_UNIT is private;
+        -:    7:
+        -:    8:   type FLOAT_NUMBER is delta 0.01 digits 10;
+        -:    9:   subtype UNIT_ID_TYPE is String(1..6);
+        -:   10:   --     package P is new PUMP;
+        -:   11:   ---------------------------------------
+        -:   12:   -- PUMP_UNIT_ID  ----------------------
+        -:   13:   ---------------------------------------
+    #####:   14:   type PUMP_UNIT_ID is
+        -:   15:      record
+        -:   16:         ID:PUMP_UNIT.UNIT_ID_TYPE;
+        -:   17:         TO_PAY : PUMP.FLOAT_NUMBER;
+        -:   18:         PUMPED :PUMP.FLOAT_NUMBER;
+        -:   19:         FUEL: PUMP.FUEL_TYPES;
+        -:   20:      end record;
+        -:   21:   ---------------------------------------
+        -:   22:   -- CASH_REGISTER  ---------------------
+        -:   23:   ---------------------------------------
+    #####:   24:   type CASH_REGISTER is
+        -:   25:      record
+        -:   26:         UNIT_1: PUMP_UNIT_ID;
+        -:   27:      end record;
+        -:   28:   cashRegister: CASH_REGISTER;
+        -:   29:
+        -:   30:   --procedure
+        -:   31:   procedure payFuel (pumpUnit: in out PUMP_UNIT.PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in  PUMP.FLOAT_NUMBER);
+        -:   32:   procedure SET_PUMPED_INFO_TO_CASH_REGISTER (pumpUnit: in out PUMP_UNIT.PUMP_UNIT);
+        -:   33:
+        -:   34:end CASH_REGISTER;

@@ -1,0 +1,166 @@
+V "GNAT Lib v2016"
+A -gnatA
+A -ftest-coverage
+A -fprofile-arcs
+A -mtune=generic
+A -march=pentium4
+P DB LC TF  ES ZX
+
+RN
+RR SIMPLE_BARRIERS
+RR NO_ABORT_STATEMENTS
+RR NO_ASYNCHRONOUS_CONTROL
+RR NO_CALENDAR
+RR NO_DYNAMIC_ATTACHMENT
+RR NO_DYNAMIC_PRIORITIES
+RR NO_ENTRY_QUEUE
+RV NO_FLOATING_POINT
+RV NO_IO
+RR NO_IMPLICIT_HEAP_ALLOCATIONS
+RR NO_LOCAL_TIMING_EVENTS
+RR NO_LOCAL_PROTECTED_OBJECTS
+RR NO_PROTECTED_TYPE_ALLOCATORS
+RR NO_RELATIVE_DELAY
+RR NO_REQUEUE_STATEMENTS
+RR NO_SELECT_STATEMENTS
+RR NO_SPECIFIC_TERMINATION_HANDLERS
+RV NO_STANDARD_STORAGE_POOLS
+RR NO_TASK_ALLOCATORS
+RR NO_TASK_ATTRIBUTES_PACKAGE
+RR NO_TASK_HIERARCHY
+RR NO_TASK_TERMINATION
+RV NO_TASKING
+RR NO_TERMINATE_ALTERNATIVES
+RV STATIC_PRIORITIES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+RR MAX_PROTECTED_ENTRIES=1
+RR MAX_SELECT_ALTERNATIVES=0
+RR MAX_TASK_ENTRIES=0
+RR MAX_ASYNCHRONOUS_SELECT_NESTING=0
+R ada.execution_time.group_budgets
+R ada.execution_time.timers
+R system.multiprocessors.dispatching_domains
+
+U send_pump_info_to_cashregister_task%b  send_pump_info_to_cashregister_task.adb  5aa2f286 OO PK
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W sprint%s		sprint.adb		sprint.ali
+W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
+
+U send_pump_info_to_cashregister_task%s  send_pump_info_to_cashregister_task.ads  80078068 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+W cash_register%s	cash_register.adb	cash_register.ali
+W cash_register_object%s  cash_register_object.ads  cash_register_object.ali
+W pump%s		pump.adb		pump.ali
+W pump_unit%s		pump_unit.adb		pump_unit.ali
+W pump_unit_objects%s	pump_unit_objects.ads	pump_unit_objects.ali
+W system%s		system.ads		system.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.task_info%s	s-tasinf.adb		s-tasinf.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
+
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20160516092928 a87e2da7 ada.real_time%s
+D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
+D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
+D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D cash_register.ads	20161110033836 06727bf1 cash_register%s
+D cash_register_object.ads  20161110050352 341e4332 cash_register_object%s
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D i-c.ads		20160516092926 5421119b interfaces.c%s
+D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
+D pump.ads		20161110075642 e5f7b109 pump%s
+D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
+D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
+D send_pump_info_to_cashregister_task.ads  20161110050618 fb5f333c send_pump_info_to_cashregister_task%s
+D send_pump_info_to_cashregister_task.adb  20161110050722 ec8130be send_pump_info_to_cashregister_task%b
+D sprint.ads		20161110080914 751104d0 sprint%s
+D system.ads		20160516092930 2da59038 system%s
+D s-atacco.ads		20160516092930 4c36d12f system.address_to_access_conversions%s
+D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20160516092930 54135002 system.exception_table%s
+D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
+D s-multip.ads		20160516092926 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20160516092930 2e5b26a9 system.os_interface%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-soflin.ads		20160516092928 14e1eb6c system.soft_links%s
+D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
+D s-stausa.ads		20160516092930 017a0a05 system.stack_usage%s
+D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
+D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20160516092930 601f6b72 system.task_info%s
+D s-taspri.ads		20160516092930 6c1d93d4 system.task_primitives%s
+D s-taprop.ads		20160516092928 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20160516092932 0766baa7 system.tasking%s
+D s-tasres.ads		20160516092926 0c8ef6fb system.tasking.restricted%s
+D s-tarest.ads		20160516092932 128b2dbd system.tasking.restricted.stages%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+D s-win32.ads		20160516092926 b7f96285 system.win32%s
+X 1 ada.ads
+16K9*Ada 19e8 18|7r6 7r26 19|2r6 2r23
+X 4 a-reatim.ads
+39K13*Real_Time 187e18 18|7w10 7r30
+X 7 a-textio.ads
+49K13*Text_IO 471e16 19|2w10 2r27
+X 9 cash_register.ads
+3K9*CASH_REGISTER 34e18 18|6w6 19|9r19
+13R9*PUMP_UNIT_ID 19e17 19|9r33
+15a10*ID{16|8A12} 19|14m21 22m21
+16f10*TO_PAY{15|6F9} 19|15m21 23m21
+17f10*PUMPED{15|6F9} 19|16m21 24m21
+18e10*FUEL{15|7E9} 19|17m21 25m21
+25r10*UNIT_1{13R9} 19|18m44
+26r10*UNIT_2{13R9} 19|26m44
+X 10 cash_register_object.ads
+2K9*CASH_REGISTER_OBJECT 5e28 18|9w6 19|18r10 26r10
+4r4*cashRegister{9|23R9} 19|18m31 26m31
+X 15 pump.ads
+1K9*PUMP 59e9 18|5w6 19|8r14
+6F9*FLOAT_NUMBER<short_float> 19|8r19
+X 16 pump_unit.ads
+3K9*PUMP_UNIT 92e14 18|4w6 4r21 19|13r18 14r26 16r31 17r29 21r18 22r26 24r31
+. 25r29
+8A12*UNIT_ID_TYPE{string}<integer>
+41V13*GET_ID{8A12} 19|14s36 22s36
+42V13*GET_TO_PAY{15|6F9} 19|13s28 21s28
+43V13*GET_PUMPED{15|6F9} 19|16s41 24s41
+44V13*GET_FUEL{15|7E9} 19|17s39 25s39
+X 17 pump_unit_objects.ads
+2K9*PUMP_UNIT_OBJECTS 6e25 18|8w6 19|13r39 14r43 16r52 17r48 21r39 22r43
+. 24r52 25r48
+4r4*PUMP_UNIT_1{16|21R9} 19|13r57 14r61 16r70 17r66
+5r4*PUMP_UNIT_2{16|21R9} 19|21r57 22r61 24r70 25r66
+X 18 send_pump_info_to_cashregister_task.ads
+10K9*Send_Pump_Info_To_CashRegister_Task 15l5 15e40 19|4b14 33l5 33t40
+12T14*send_Pump_Info_To_CashRegister_Task 12d50 12d72 14l8 14e43 19|6b14
+. 32l8 32t43
+12i50 Pri{21|101I12} 13r23
+12i72 unitID{positive} 19|12r10 20r13
+X 19 send_pump_info_to_cashregister_task.adb
+8f7 topay{15|6F9} 13m10 15r31 21m10 23r31
+9r7 pumpUnitId{9|13R9} 14m10 15m10 16m10 17m10 18r54 22m10 23m10 24m10 25m10
+. 26r54
+X 20 sprint.ads
+2K10*sPrint 19|1w6 1r18 20|13e11
+3U14*print 19|19s10 27s10
+X 21 system.ads
+37K9*System 18|3w6 12r55 21|200e11
+100I12*Any_Priority{integer}
+101I12*Priority{100I12} 18|12r62
+X 31 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 39 s-tarest.ads
+221U14*Activate_All_Tasks_Sequential 222i<c,__gnat_activate_all_tasks>22
+

@@ -1,0 +1,208 @@
+V "GNAT Lib v2016"
+A -gnatA
+A -ftest-coverage
+A -fprofile-arcs
+A -mtune=generic
+A -march=pentium4
+P DB LC TF  ES ZX
+
+RN
+RR SIMPLE_BARRIERS
+RR NO_ABORT_STATEMENTS
+RR NO_ASYNCHRONOUS_CONTROL
+RR NO_CALENDAR
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RR NO_DYNAMIC_ATTACHMENT
+RR NO_DYNAMIC_PRIORITIES
+RR NO_ENTRY_QUEUE
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RR NO_IMPLICIT_HEAP_ALLOCATIONS
+RR NO_LOCAL_TIMING_EVENTS
+RR NO_LOCAL_PROTECTED_OBJECTS
+RR NO_PROTECTED_TYPE_ALLOCATORS
+RR NO_RELATIVE_DELAY
+RR NO_REQUEUE_STATEMENTS
+RR NO_SELECT_STATEMENTS
+RR NO_SPECIFIC_TERMINATION_HANDLERS
+RV NO_STANDARD_STORAGE_POOLS
+RR NO_TASK_ALLOCATORS
+RR NO_TASK_ATTRIBUTES_PACKAGE
+RR NO_TASK_HIERARCHY
+RR NO_TASK_TERMINATION
+RV NO_TASKING
+RR NO_TERMINATE_ALTERNATIVES
+RV STATIC_PRIORITIES
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+RR MAX_PROTECTED_ENTRIES=1
+RR MAX_SELECT_ALTERNATIVES=0
+RR MAX_TASK_ENTRIES=0
+RR MAX_ASYNCHRONOUS_SELECT_NESTING=0
+R ada.execution_time.group_budgets
+R ada.execution_time.timers
+R system.multiprocessors.dispatching_domains
+
+U pay_task%b		pay_task.adb		bbc1f3aa OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W sprint%s		sprint.adb		sprint.ali
+W system%s		system.ads		system.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
+
+U pay_task%s		pay_task.ads		cbb4d36f EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+W cash_register%s	cash_register.adb	cash_register.ali
+W cash_register_object%s  cash_register_object.ads  cash_register_object.ali
+W pump%s		pump.adb		pump.ali
+W pump_unit%s		pump_unit.adb		pump_unit.ali
+W pump_unit_objects%s	pump_unit_objects.ads	pump_unit_objects.ali
+W system%s		system.ads		system.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.task_info%s	s-tasinf.adb		s-tasinf.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
+
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20160516092928 a87e2da7 ada.real_time%s
+D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
+D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
+D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D cash_register.ads	20161110033836 06727bf1 cash_register%s
+D cash_register_object.ads  20161110050352 341e4332 cash_register_object%s
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D i-c.ads		20160516092926 5421119b interfaces.c%s
+D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
+D pay_task.ads		20161110081616 b0ec603b pay_task%s
+D pay_task.adb		20161110083158 6f487040 pay_task%b
+D pump.ads		20161110075642 e5f7b109 pump%s
+D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
+D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
+D sprint.ads		20161110080914 751104d0 sprint%s
+D system.ads		20160516092930 2da59038 system%s
+D s-atacco.ads		20160516092930 4c36d12f system.address_to_access_conversions%s
+D s-conca2.ads		20160516092930 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20160516092930 54135002 system.exception_table%s
+D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
+D s-multip.ads		20160516092926 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20160516092930 2e5b26a9 system.os_interface%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-soflin.ads		20160516092928 14e1eb6c system.soft_links%s
+D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
+D s-stausa.ads		20160516092930 017a0a05 system.stack_usage%s
+D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
+D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20160516092930 601f6b72 system.task_info%s
+D s-taspri.ads		20160516092930 6c1d93d4 system.task_primitives%s
+D s-taprop.ads		20160516092928 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20160516092932 0766baa7 system.tasking%s
+D s-tasres.ads		20160516092926 0c8ef6fb system.tasking.restricted%s
+D s-tarest.ads		20160516092932 128b2dbd system.tasking.restricted.stages%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+D s-win32.ads		20160516092926 b7f96285 system.win32%s
+X 1 ada.ads
+16K9*Ada 19e8 15|7r6 7r26 16|2r6 2r23 3r6
+X 2 a-except.ads
+54K13*Exceptions 349e19 16|3w10
+X 4 a-reatim.ads
+39K13*Real_Time 187e18 15|7w10 7r30
+X 7 a-textio.ads
+49K13*Text_IO 471e16 16|2w10 2r27
+X 9 cash_register.ads
+3K9*CASH_REGISTER 34e18 15|6w6
+15a10*ID{18|8A12} 16|25r62 26r75 68r62 69r75
+16f10*TO_PAY{17|6F9} 16|30m60 41m60 73m60 84m60
+17f10*PUMPED{17|6F9} 16|31m60 42m60 74m60 85m60
+25r10*UNIT_1{13R9} 16|25r55 26r68 30m53 31m53 41m53 42m53
+26r10*UNIT_2{13R9} 16|68r55 69r68 73m53 74m53 84m53 85m53
+X 10 cash_register_object.ads
+2K9*CASH_REGISTER_OBJECT 5e28 15|9w6 16|25r21 26r34 30r19 31r19 41r19 42r19
+. 68r21 69r34 73r19 74r19 84r19 85r19
+4r4*cashRegister{9|23R9} 16|25r42 26r55 30m40 31m40 41m40 42m40 68r42 69r55
+. 73m40 74m40 84m40 85m40
+X 15 pay_task.ads
+10K9*Pay_Task 15l5 15e13 16|5b14 111l5 111t13
+12T14*pay_Task 12d23 12d45 12d63 14l8 14e16 16|7b14 110l8 110t16
+12i23 Pri{21|101I12} 13r23
+12i45 unitID{positive} 16|18r10 61r13
+12i63 AMOUNT{positive} 16|17r47 28r60
+X 16 pay_task.adb
+8f7 amountPayByCustomer{17|6F9} 17m7 29r19 40r22 51r28 71r57 72r19 83r21
+. 94r28
+9r7 pump_to_reset{17|20R9} 32m19 34m39 34r39 35m35 35r35 43m19 45m39 45r39
+. 46m35 46r35 75m19 77m39 77r39 78m35 78r35 86m19 88m39 88r39 89m35 89r35
+10f7 change{17|6F9} 51m19 52r63 94m19 95r63
+11a7 id{18|8A12} 19m10 25r16 62m11 68r16
+12f7 topay{17|6F9} 20m10 27r51 29r41 40r44 51r50 63m10 70r51 72r41 83r43
+. 94r50
+15X7 payFuelException 23r19 55r25 66r19 98r25
+X 17 pump.ads
+1K9*PUMP 15|5w6 16|8r28 9r22 10r15 12r14 13r20 14r20 17r29 21r64 34r19 34r53
+. 35r19 45r19 45r53 46r19 64r64 77r19 77r53 78r19 88r19 88r53 89r19 17|59e9
+6F9*FLOAT_NUMBER<short_float> 16|8r33 10r20 12r19 13r25 17r34
+10E9*STATE_TYPE 16|14r25 34r58 45r58 77r58 88r58 17|10e54
+10n46*Waiting{10E9} 16|21r69 64r69
+20R9*PUMP 16|9r27 17|30e17
+29e10*FUEL_TYPE{7E9} 16|33r101 44r101 76r101 87r102
+34U14*SET_PUMP_STATE 16|34s24 45s24 77s24 88s24
+35U14*SET_PUMPED 16|35s24 46s24 78s24 89s24
+X 18 pump_unit.ads
+3K9*PUMP_UNIT 15|4w6 4r21 16|11r11 20r18 25r70 32r34 36r19 37r19 38r19 43r34
+. 47r19 48r19 49r19 57r19 63r18 68r70 75r34 79r19 80r19 81r19 86r34 90r19
+. 91r19 92r19 101r19 18|92e14
+8A12*UNIT_ID_TYPE{string}<integer> 16|11r21
+15r10*ACTIVED_PUMP{17|20R9} 16|33r88 44r88 76r88 87r89
+29e10*PUMP_ACTIVE_STATE{17|10E9} 16|21r43 64r43
+34b10*ActivePump{boolean} 16|39m49 50m49 82m49 93m49
+35r10*Display{13R9} 16|33r80 44r80 76r80 87r81
+39V13*GET_PUMP{17|20R9} 16|32s44 43s44 75s44 86s44
+39r22 pumpUnit{21R9} 16|32r53 43r53 75r53 86r53
+39e46 fuelType{17|7E9} 16|33r38 44r38 76r38 87r39
+42V13*GET_TO_PAY{17|6F9} 16|20s28 25s80 57s29 63s28 68s80 101s29
+56U14*SET_IS_PAID 16|36s29 47s29 79s29 90s29
+57U14*SET_TO_PAY 16|38s29 49s29 81s29 92s29
+59U14*SET_PUMPED 16|37s29 48s29 80s29 91s29
+X 19 pump_unit_objects.ads
+2K9*PUMP_UNIT_OBJECTS 15|8w6 16|20r39 21r13 25r91 32r65 33r50 36r41 37r40
+. 38r40 39r19 43r65 44r50 47r41 48r40 49r40 50r19 57r40 63r39 64r13 68r91
+. 75r65 76r50 79r41 80r40 81r40 82r19 86r65 87r51 90r41 91r40 92r40 93r19
+. 101r40 19|6e25
+4r4*PUMP_UNIT_1{18|21R9} 16|20r57 21r31 25r109 32r83 33r68 36m59 36r59 37m58
+. 37r58 38m58 38r58 39m37 43r83 44r68 47m59 47r59 48m58 48r58 49m58 49r58
+. 50m37 57r58
+5r4*PUMP_UNIT_2{18|21R9} 16|63r57 64r31 68r109 75r83 76r68 79m59 79r59 80m58
+. 80r58 81m58 81r58 82m37 86r83 87r69 90m59 90r59 91m58 91r58 92m58 92r58
+. 93m37 101r58
+X 20 sprint.ads
+2K10*sPrint 16|1w6 1r18 20|13e11
+3U14*print 16|22s13 26s16 54s19 58s16 65s13 69s16 97s19 102s16
+4U14*print_float_type 16|27s16 52s19 70s16 71s16 95s19
+8U14*print_Positive_type 16|28s16
+X 21 system.ads
+37K9*System 15|3w6 12r28 21|200e11
+100I12*Any_Priority{integer}
+101I12*Priority{100I12} 15|12r35
+X 32 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 40 s-tarest.ads
+221U14*Activate_All_Tasks_Sequential 222i<c,__gnat_activate_all_tasks>22
+

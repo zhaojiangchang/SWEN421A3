@@ -1,0 +1,241 @@
+V "GNAT Lib v2016"
+A -ftest-coverage
+A -fprofile-arcs
+A -gnatc
+P GP ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
+RV NO_FLOATING_POINT
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U cash_register%b	cash_register.adb	5e023624 OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W sprint%s		sprint.adb		sprint.ali
+W system%s		system.ads		system.ali
+
+U cash_register%s	cash_register.ads	d5b1197e EE OO PK IU
+W pump%s		pump.adb		pump.ali
+W pump_unit%s		pump_unit.adb		pump_unit.ali
+
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D cash_register.ads	20160814182400 3753e3ed cash_register%s
+D cash_register.adb	20160814214128 73bd768a cash_register%b
+D pump.ads		20160814135702 e5f7b109 pump%s
+D pump_unit.ads		20160814135646 07154b9a pump_unit%s
+D sprint.ads		20160814103738 33f5b196 sprint%s
+D system.ads		20160516092930 2da59038 system%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+X 1 ada.ads
+16K9*Ada 19e8 5|2r6
+X 2 a-except.ads
+54K13*Exceptions 349e19 5|2w10
+X 4 cash_register.ads
+3K9*CASH_REGISTER 34l5 34e18 5|4b14 69l5 69t18
+8D9*FLOAT_NUMBER
+9A12*UNIT_ID_TYPE{string}<integer>
+14R9*PUMP_UNIT_ID 20e17 26r18 5|59r19
+16a10*ID{7|8A12} 5|26r48 29r38 62m18
+17f10*TO_PAY{6|6F9} 5|31m36 63m18
+18f10*PUMPED{6|6F9} 5|32m36 64m18
+19e10*FUEL{6|7E9} 5|65m18
+24R9*CASH_REGISTER 27e17 28r18
+26r10*UNIT_1{14R9} 5|26r41 29r31 31m29 32m29 66m20
+28r4*cashRegister{24R9} 5|26r28 29r18 31m16 32m16 66m7
+31U14*payFuel 31=23 31=61 31>87 5|10b14 51l8 51t15
+31r23 pumpUnit{7|14R9} 5|10b23 19r30 20r36 21r10 29r67 35m38 36m37 37m37
+. 45r37
+31r61 pump_r{6|20R9} 5|10b61 33m36 34m32
+31f87 AMOUNT{6|6F9} 5|10b87 28r51 30r16
+32U14*SET_PUMPED_INFO_TO_CASH_REGISTER 32=48 5|55b14 68l8 68t40
+32r48 pumpUnit{7|14R9} 5|56b7 61r36 62r40 64r49 65r45
+X 5 cash_register.adb
+11a7 id{7|8A12} 19m7 29r13
+12f7 topay{6|6F9} 20m7 27r45 30r25
+15X7 payFuelException 23r16 43r22
+58f7 topay{6|6F9} 61m7 63r28
+59r7 pumpUnitId{4|14R9} 62m7 63m7 64m7 65m7 66r30
+X 6 pump.ads
+1K9*PUMP 4|2w6 17r19 18r18 19r16 31r76 31r99 5|10r76 10r99 12r14 13r20 14r20
+. 21r40 33r16 33r43 34r16 58r14 6|59e9
+6F9*FLOAT_NUMBER<short_float> 4|17r24 18r23 31r104 5|10r104 12r19 13r25 58r19
+7E9*FUEL_TYPES 4|19r21 6|7e41
+10E9*STATE_TYPE 5|14r25 33r48 6|10e54
+10n46*Waiting{10E9} 5|21r45
+20R9*PUMP 4|31r81 5|10r81 6|30e17
+34U14*SET_PUMP_STATE 5|33s21
+35U14*SET_PUMPED 5|34s21
+X 7 pump_unit.ads
+3K9*PUMP_UNIT 4|1w6 16r13 31r40 32r65 5|10r40 11r11 19r13 20r15 29r46 35r16
+. 36r16 37r16 45r16 56r24 61r15 62r23 64r28 65r26 7|80e14
+8A12*UNIT_ID_TYPE{string}<integer> 4|16r23 5|11r21
+14R9*PUMP_UNIT 4|31r50 32r75 5|10r50 56r34 7|27e17
+22e10*PUMP_ACTIVE_STATE{6|10E9} 5|21r19
+32V13*GET_ID{8A12} 5|19s23 62s33
+33V13*GET_TO_PAY{6|6F9} 5|20s25 29s56 45s26 61s25
+34V13*GET_PUMPED{6|6F9} 5|64s38
+35V13*GET_FUEL{6|7E9} 5|65s36
+44U14*SET_IS_PAID 5|35s26
+45U14*SET_TO_PAY 5|37s26
+47U14*SET_PUMPED 5|36s26
+X 8 sprint.ads
+2K10*sPrint 5|1w6 1r18 8|13e11
+3U14*print 5|22s10 26s10 42s16 46s13 67s7
+4U14*print_float_type 5|27s10 28s10
+FD 1 ada.ads
+FS .1 16K9 ada
+FD 2 a-except.ads
+FS .1 54K13 ada__exceptions
+FS .2 70V13 ada__exceptions__exception_name
+FS .3 72V13 ada__exceptions__exception_name__2
+FS .4 74V13 ada__exceptions__wide_exception_name
+FS .5 78V13 ada__exceptions__wide_exception_name__2
+FS .6 82V13 ada__exceptions__wide_wide_exception_name
+FS .7 86V13 ada__exceptions__wide_wide_exception_name__2
+FS .8 90U14 ada__exceptions__raise_exception
+FS .9 94V13 ada__exceptions__exception_message
+FS .10 96U14 ada__exceptions__reraise_occurrence
+FS .11 102V13 ada__exceptions__exception_identity
+FS .12 104V13 ada__exceptions__exception_information
+FS .13 123U14 ada__exceptions__save_occurrence
+FS .14 127V13 ada__exceptions__save_occurrence__2
+FS .15 169V13 ada__exceptions__eid_to_string
+FS .16 170V13 ada__exceptions__string_to_eid
+FS .17 180V13 ada__exceptions__exception_name_simple
+FS .18 188U14 ada__exceptions__raise_exception_always
+FS .19 197U14 ada__exceptions__raise_from_signal_handler
+FS .20 215U14 ada__exceptions__raise_from_controlled_operation
+FS .21 224U14 ada__exceptions__reraise_library_exception_if_any
+FS .22 231U14 ada__exceptions__reraise_occurrence_always
+FS .23 238U14 ada__exceptions__reraise_occurrence_no_defer
+FS .24 245V13 ada__exceptions__triggered_by_abort
+FS .25 270U14 ada__exceptions__poll
+FS .26 325V13 ada__exceptions__get_exception_machine_occurrence
+FS .27 334V13 ada__exceptions__eo_to_string
+FS .28 335V13 ada__exceptions__string_to_eo
+FD 3 a-unccon.ads
+FD 4 cash_register.ads
+FS .1 3K9 cash_register
+FS .2 31U14 cash_register__payfuel
+FS .3 32U14 cash_register__set_pumped_info_to_cash_register
+FD 5 cash_register.adb
+FS .1 4K14 standard__cash_register -> 4.1
+FS .2 10U14 cash_register__payfuel -> 4.2
+FS .3 55U14 cash_register__set_pumped_info_to_cash_register -> 4.3
+FD 6 pump.ads
+FS .1 1K9 pump
+FS .2 33U14 pump__set_fuel_price
+FS .3 34U14 pump__set_pump_state
+FS .4 35U14 pump__set_pumped
+FS .5 36U14 pump__set_pump_nozzle_state
+FS .6 38U14 pump__append_reservoir
+FS .7 40U14 pump__set_reservoir_size
+FS .8 42U14 pump__remove_petrol_reservoir
+FS .9 48V13 pump__get_state
+FS .10 49V13 pump__get_current_nozzle_state
+FS .11 50V13 pump__get_unit_price
+FS .12 51V13 pump__get_tanks_size
+FS .13 52V13 pump__get_resevoir_category
+FD 7 pump_unit.ads
+FS .1 3K9 pump_unit
+FS .2 30V13 pump_unit__get_pump
+FS .3 31V13 pump_unit__get_tanks_size
+FS .4 32V13 pump_unit__get_id
+FS .5 33V13 pump_unit__get_to_pay
+FS .6 34V13 pump_unit__get_pumped
+FS .7 35V13 pump_unit__get_fuel
+FS .8 36V13 pump_unit__unit_is_using
+FS .9 37V13 pump_unit__unit_is_paid
+FS .10 38V13 pump_unit__get_pump_unit_state
+FS .11 39V13 pump_unit__get_pump_nozzle_state
+FS .12 43U14 pump_unit__set_is_using
+FS .13 44U14 pump_unit__set_is_paid
+FS .14 45U14 pump_unit__set_to_pay
+FS .15 46U14 pump_unit__set_unit_id
+FS .16 47U14 pump_unit__set_pumped
+FS .17 48U14 pump_unit__set_pump_active_state
+FS .18 49U14 pump_unit__set_pump_nozzle_state
+FS .19 51U14 pump_unit__add_pump
+FS .20 53U14 pump_unit__left_nozzle
+FS .21 58U14 pump_unit__return_nozzle
+FS .22 67U14 pump_unit__start_pumping
+FS .23 72U14 pump_unit__stop_pumping
+FD 8 sprint.ads
+FS .1 2K10 sprint
+FS .2 3U14 sprint__print
+FS .3 4U14 sprint__print_float_type
+FS .4 5U14 sprint__print_state_type
+FS .5 6U14 sprint__print_nozzle_type
+FS .6 7U14 sprint__print_fuel_type
+FD 9 system.ads
+FS .1 37K9 system
+FS .2 77V13 system__Olt
+FS .3 78V13 system__Ole
+FS .4 79V13 system__Ogt
+FS .5 80V13 system__Oge
+FS .6 81V13 system__Oeq
+FD 10 s-parame.ads
+FS .1 51K16 system__parameters
+FS .2 81V13 system__parameters__default_stack_size
+FS .3 84V13 system__parameters__minimum_stack_size
+FS .4 87V13 system__parameters__adjust_storage_size
+FD 11 s-stalib.ads
+FS .1 55K16 system__standard_library
+FS .2 76K4 system__standard_library__to_ptrGP4411
+FS .3 76V13 system__standard_library__to_ptrGP4411__to_ptrR
+FS .4 254U14 system__standard_library__abort_undefer_direct
+FS .5 259U14 system__standard_library__adafinal
+FD 12 s-traent.ads
+FS .1 47K16 system__traceback_entries
+FS .2 58V13 system__traceback_entries__pc_for
+FS .3 63V13 system__traceback_entries__tb_entry_for
+FX 4 cash_register.ads .1 cash_register
+F 28*4 cash_register__cashregister 5|.2:26r28 29r18 31m16 32m16 .3:66m7
+FX 4 cash_register.ads .2 cash_register__payfuel
+F 31=23 cash_register__payfuel__pumpunit 5|.2:19r30 20r36 21r10 29r67 35m38
+. 36m37 37m37 45r37
+F 31=61 cash_register__payfuel__pump_r 5|.2:33m36 34m32
+F 31>87 cash_register__payfuel__amount 5|.2:28c51 30c16
+FX 4 cash_register.ads .3 cash_register__set_pumped_info_to_cash_register
+F 32=48 cash_register__set_pumped_info_to_cash_register__pumpunit 5|.3:61r36
+. 62r40 64r49 65r45
+FX 5 cash_register.adb .2 cash_register__payfuel
+F 11*7 cash_register__payfuel__id 19m7 29r13
+F 12*7 cash_register__payfuel__topay 20m7 27r45 30r25
+FX 5 cash_register.adb .3 cash_register__set_pumped_info_to_cash_register
+F 58*7 cash_register__set_pumped_info_to_cash_register__topay 61m7 63r28
+F 59*7 cash_register__set_pumped_info_to_cash_register__pumpunitid 62m7 63m7
+. 64m7 65m7 66r30
+FX 6 pump.ads .1 pump
+F 34*14 pump__set_pump_state 5|.2:33s21
+F 35*14 pump__set_pumped 5|.2:34s21
+FX 7 pump_unit.ads .1 pump_unit
+F 32*13 pump_unit__get_id 5|.2:19s23 .3:62s33
+F 33*13 pump_unit__get_to_pay 5|.2:20s25 29s56 45s26 .3:61s25
+F 34*13 pump_unit__get_pumped 5|.3:64s38
+F 35*13 pump_unit__get_fuel 5|.3:65s36
+F 44*14 pump_unit__set_is_paid 5|.2:35s26
+F 45*14 pump_unit__set_to_pay 5|.2:37s26
+F 47*14 pump_unit__set_pumped 5|.2:36s26
+FX 8 sprint.ads .1 sprint
+F 3*14 sprint__print 5|.2:22s10 26s10 42s16 46s13 .3:67s7
+F 4*14 sprint__print_float_type 5|.2:27s10 28s10
+
+GG EK_REMOTE_STATES
+GG EK_GLOBALS cash_register KIND_PACKAGE_BODY ORIGIN_FLOW c:local_var [ cash_register__cashregister ] c:local_sub [ cash_register__payfuel cash_register__set_pumped_info_to_cash_register ]
+GG EK_GLOBALS cash_register__payfuel KIND_SUBPROGRAM ORIGIN_FLOW c:var_in [ cash_register__cashregister ] c:var_out [ cash_register__cashregister ] c:calls [ pump_unit__get_id pump_unit__get_to_pay sprint__print sprint__print_float_type ] c:calls_conditional [ pump__set_pump_state pump__set_pumped pump_unit__set_is_paid pump_unit__set_pumped pump_unit__set_to_pay ] c:local_var [ cash_register__payfuel__pump_r cash_register__payfuel__pumpunit cash_register__payfuel__id cash_register__payfuel__topay cash_register__payfuel__amount ] c:local_init [ cash_register__payfuel__id cash_register__payfuel__topay ]
+GG EK_GLOBALS cash_register__set_pumped_info_to_cash_register KIND_SUBPROGRAM ORIGIN_FLOW c:var_out [ cash_register__cashregister ] c:calls [ pump_unit__get_pumped pump_unit__get_fuel pump_unit__get_id pump_unit__get_to_pay sprint__print ] c:local_var [ cash_register__set_pumped_info_to_cash_register__pumpunit cash_register__set_pumped_info_to_cash_register__topay cash_register__set_pumped_info_to_cash_register__pumpunitid ] c:local_init [ cash_register__set_pumped_info_to_cash_register__topay cash_register__set_pumped_info_to_cash_register__pumpunitid ]
+GG EK_VOLATILES
+GG EK_TASKING_NONBLOCKING [ cash_register__payfuel cash_register__set_pumped_info_to_cash_register ]
+GG EK_TASKING_INFO cash_register__payfuel c:UNSYNCH_ACCESSES [ cash_register__cashregister ]
+GG EK_TASKING_INFO cash_register__set_pumped_info_to_cash_register c:UNSYNCH_ACCESSES [ cash_register__cashregister ]
+GG EK_END_MARKER

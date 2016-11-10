@@ -1,0 +1,71 @@
+        -:    0:Source:C:/Users/JackyChang/Documents/421A1/src/cash_register.adb
+        -:    0:Programs:38
+        -:    1:with sPrint; use sPrint;
+        -:    2:with Ada.Exceptions;
+        -:    3:
+        -:    4:package body CASH_REGISTER
+        -:    5:with SPARK_Mode is
+        -:    6:
+        -:    7:   ---------------------------------------
+        -:    8:   -- payFuel  ----------------------------
+        -:    9:   ---------------------------------------
+        2:   10:   procedure payFuel (pumpUnit: in out PUMP_UNIT.PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in  PUMP.FLOAT_NUMBER)is
+        -:   11:      id: PUMP_UNIT.UNIT_ID_TYPE;
+        -:   12:      topay: PUMP.FLOAT_NUMBER;
+        -:   13:      use all type PUMP.FLOAT_NUMBER;
+        -:   14:      use all type PUMP.STATE_TYPE;
+        2:   15:      payFuelException : Exception;
+        -:   16:
+        -:   17:   begin
+        -:   18:
+        2:   19:      id := PUMP_UNIT.GET_ID(pumpUnit);
+        2:   20:      topay:= PUMP_UNIT.GET_TO_PAY(pumpUnit);
+        2:   21:      if pumpUnit.PUMP_ACTIVE_STATE /= PUMP.Waiting then
+    #####:   22:         print("you need return nozzle or pumping first");
+    #####:   23:         Raise payFuelException;
+        -:   24:      else
+        -:   25:
+        2:   26:         print("Pay for: "&cashRegister.UNIT_1.ID);
+        2:   27:         print("Amount to pay: "&topay'Image&"   Actual amount given: "&AMOUNT'Image);
+        2:   28:         if id = cashRegister.UNIT_1.ID  and PUMP_UNIT.GET_TO_PAY(pumpUnit) /= 0.00 then
+        2:   29:            if AMOUNT = topay then
+        2:   30:               print("paid for UNIT_1:  " & AMOUNT'Image);
+        2:   31:               cashRegister.UNIT_1.TO_PAY:= 0.00;
+        2:   32:               cashRegister.UNIT_1.PUMPED:=0.00;
+        2:   33:               PUMP.SET_PUMP_STATE(pump_r,PUMP.STATE_TYPE'Val(0));
+        2:   34:               PUMP.SET_PUMPED(pump_r,0.00);
+        2:   35:               PUMP_UNIT.SET_IS_PAID(pumpUnit);
+        2:   36:               PUMP_UNIT.SET_PUMPED(pumpUnit, 0.00);
+        2:   37:               PUMP_UNIT.SET_TO_PAY(pumpUnit,0.00);
+        -:   38:
+        -:   39:               --              PUMP_UNIT.PUMP_UNIT
+        -:   40:
+        -:   41:            else
+    #####:   42:               print("amount not equal");
+    #####:   43:               Raise payFuelException;
+        -:   44:            end if;
+    #####:   45:         elsif PUMP_UNIT.GET_TO_PAY(pumpUnit) = 0.00 then
+    #####:   46:            print("already paid");
+        -:   47:
+        -:   48:         end if;
+        -:   49:      end if;
+        -:   50:
+        2:   51:   end payFuel;
+        -:   52:   ---------------------------------------
+        -:   53:   -- SET_PUMPED_INFO_TO_CASH_REGISTER  --
+        -:   54:   ---------------------------------------
+        4:   55:   procedure SET_PUMPED_INFO_TO_CASH_REGISTER
+        -:   56:     (pumpUnit: in out PUMP_UNIT.PUMP_UNIT)
+        -:   57:   is
+        -:   58:      topay: PUMP.FLOAT_NUMBER;
+        -:   59:      pumpUnitId: PUMP_UNIT_ID;
+        -:   60:   begin
+        4:   61:      topay:= PUMP_UNIT.GET_TO_PAY(pumpUnit);
+        4:   62:      pumpUnitId.ID :=PUMP_UNIT.GET_ID(pumpUnit);
+        4:   63:      pumpUnitId.TO_PAY := topay;
+        4:   64:      pumpUnitId.PUMPED := PUMP_UNIT.GET_PUMPED(pumpUnit);
+        4:   65:      pumpUnitId.FUEL := PUMP_UNIT.GET_FUEL(pumpUnit);
+        4:   66:      cashRegister.UNIT_1 := pumpUnitId;
+        4:   67:      print("set pumpunit value to cash regesiter");
+        4:   68:   end SET_PUMPED_INFO_TO_CASH_REGISTER;
+        -:   69:end CASH_REGISTER;

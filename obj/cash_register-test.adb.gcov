@@ -1,0 +1,148 @@
+        -:    0:Source:C:/Users/JackyChang/Documents/421A1/src/_test/scenarios/cash_register-test.adb
+        -:    0:Programs:38
+        -:    1:with Ada.Text_IO; use Ada.Text_IO;
+        -:    2:with AUnit.Assertions; use AUnit.Assertions;
+        -:    3:with sPrint;
+        2:    4:package body CASH_REGISTER.Test is
+        -:    5:
+        -:    6:   use all type PUMP.FLOAT_NUMBER;
+        2:    7:   UNIT_1 : PUMP_UNIT.PUMP_UNIT;
+        2:    8:   UNIT_1_91: PUMP.PUMP;
+        -:    9:   U91: PUMP.FUEL_TYPES;
+        -:   10:   F_U91: Integer :=0;
+        -:   11:   C: CASH_REGISTER;
+        -:   12:   P: PUMP_UNIT_ID;
+        -:   13:
+        -:   14:   CAR_TANK_SPACE: PUMP.FLOAT_NUMBER;
+        -:   15:   AMOUNT_TO_FILL: PUMP.FLOAT_NUMBER;
+        2:   16:   procedure Set_Up_Case (T: in out TC) is
+        -:   17:      pragma Unreferenced (T);
+        -:   18:   begin
+        2:   19:      New_Line;
+        2:   20:      Put_Line ("Set up case ..");
+        -:   21:      --set initial car condition
+        2:   22:      CAR_TANK_SPACE := 5.00;
+        -:   23:      --set customer input not money
+        2:   24:      AMOUNT_TO_FILL := 10.00;
+        -:   25:
+        2:   26:      U91 :=PUMP.FUEL_TYPES'Val(F_U91);
+        2:   27:      PUMP_UNIT.SET_UNIT_ID(UNIT_1,"UNIT_1");
+        2:   28:      PUMP_UNIT.ADD_PUMP(UNIT_1,UNIT_1_91, U91);
+        2:   29:      UNIT_1_91.UNIT_PRICE:=2.00;
+        2:   30:      P.ID := UNIT_1.ID;
+        2:   31:      P.TO_PAY:= UNIT_1.TO_PAY;
+        2:   32:      P.PUMPED:= UNIT_1.PUMPED;
+        2:   33:      P.FUEL:= UNIT_1.PUMP_ACTIVE_FUEL;
+        2:   34:      C.UNIT_1:= P;
+        2:   35:   end Set_Up_Case;
+        -:   36:
+        -:   37:
+        4:   38:   procedure Set_Up (T : in out TC) is
+        -:   39:   begin
+        4:   40:      New_Line;
+        4:   41:      Put_Line("Set Up ..");
+        4:   42:      UNIT_1_91.UNIT_PRICE:=2.00;
+        4:   43:      P.ID := UNIT_1.ID;
+        4:   44:      P.TO_PAY:= UNIT_1.TO_PAY;
+        4:   45:      P.PUMPED:= UNIT_1.PUMPED;
+        4:   46:      P.FUEL:= UNIT_1.PUMP_ACTIVE_FUEL;
+        4:   47:      C.UNIT_1:= P;
+        -:   48:
+        4:   49:   end;
+        -:   50:
+        4:   51:   procedure Tear_Down (T : in out TC) is
+        -:   52:   begin
+        4:   53:      Put_Line("Tear Down ...");
+        4:   54:      UNIT_1.IS_USING:=False;
+        4:   55:      UNIT_1.IS_PAID:=True;
+        4:   56:      UNIT_1.TO_PAY:= 0.00;
+        4:   57:      UNIT_1.PUMPED:=0.00;
+        4:   58:      UNIT_1.PUMP_ACTIVE_FUEL:= PUMP.U91;
+        4:   59:      UNIT_1.PUMP_ACTIVE_STATE:= PUMP.Base;
+        4:   60:      UNIT_1.PUMP_NOZZLE_STATE:= PUMP.NozzleBase;
+        4:   61:      UNIT_1_91.NOZZLE_STATE:= PUMP.NozzleBase;
+        4:   62:      UNIT_1_91.PUMP_STATE:=PUMP.Base;
+        4:   63:      UNIT_1_91.FUEL_TYPE:= PUMP.U91;
+        4:   64:      UNIT_1_91.RESERVOIR_INFO.TOTAL:=1000.00;
+        4:   65:      UNIT_1_91.PUMPED:= 0.00;
+        4:   66:      CAR_TANK_SPACE := 5.00;
+        -:   67:      --set customer input not money
+        4:   68:      AMOUNT_TO_FILL := 10.00;
+        -:   69:
+        -:   70:
+        -:   71:
+        -:   72:
+        4:   73:   end;
+        -:   74:
+        2:   75:   procedure Tear_Down_Case (T : in out TC) is
+        -:   76:   begin
+        2:   77:      Put_Line ("Tear Down Case ..");
+        2:   78:      UNIT_1.IS_USING:=False;
+        2:   79:      UNIT_1.IS_PAID:=True;
+        2:   80:      UNIT_1.TO_PAY:= 0.00;
+        2:   81:      UNIT_1.PUMPED:=0.00;
+        2:   82:      UNIT_1.PUMP_ACTIVE_FUEL:= PUMP.U91;
+        2:   83:      UNIT_1.PUMP_ACTIVE_STATE:= PUMP.Base;
+        2:   84:      UNIT_1.PUMP_NOZZLE_STATE:= PUMP.NozzleBase;
+        2:   85:      UNIT_1_91.NOZZLE_STATE:= PUMP.NozzleBase;
+        2:   86:      UNIT_1_91.PUMP_STATE:=PUMP.Base;
+        2:   87:      UNIT_1_91.FUEL_TYPE:= PUMP.U91;
+        2:   88:      UNIT_1_91.RESERVOIR_INFO.TOTAL:=1000.00;
+        2:   89:      UNIT_1_91.PUMPED:= 0.00;
+        2:   90:      CAR_TANK_SPACE := 5.00;
+        -:   91:      --set customer input not money
+        2:   92:      AMOUNT_TO_FILL := 10.00;
+        -:   93:
+        2:   94:   end;
+        -:   95:
+        -:   96:
+        -:   97:   -- ===========================================================
+        -:   98:   --                 TEST CASES/SCENARIOS
+        -:   99:   -- ===========================================================
+        -:  100:
+        2:  101:   procedure Test_SET_PUMPED_INFO_TO_CASH_REGISTER(CWTC : in out AUnit.Test_Cases.Test_Case'Class) is
+        -:  102:   begin
+        2:  103:      PUMP_UNIT.LEFT_NOZZLE(UNIT_1,UNIT_1_91,U91);
+        2:  104:      PUMP_UNIT.START_PUMPING(UNIT_1,UNIT_1_91, 2.00, CAR_TANK_SPACE);
+        2:  105:      PUMP_UNIT.RETURN_NOZZLE(UNIT_1,UNIT_1_91);
+        2:  106:      SET_PUMPED_INFO_TO_CASH_REGISTER(UNIT_1);
+        2:  107:      sPrint.print_float_type("aa: ",UNIT_1.TO_PAY);
+        2:  108:      Assert (Condition => (UNIT_1.ID) = C.UNIT_1.ID,
+        -:  109:              Message => "suppose  UNIT_1 " );
+        2:  110:   end Test_SET_PUMPED_INFO_TO_CASH_REGISTER;
+        -:  111:
+        2:  112:   procedure payFuel(CWTC : in out AUnit.Test_Cases.Test_Case'Class) is
+        -:  113:   begin
+        2:  114:      PUMP_UNIT.LEFT_NOZZLE(UNIT_1,UNIT_1_91,U91);
+        2:  115:      PUMP_UNIT.START_PUMPING(UNIT_1,UNIT_1_91,AMOUNT_TO_FILL, CAR_TANK_SPACE);
+        2:  116:      PUMP_UNIT.START_PUMPING(UNIT_1,UNIT_1_91, 2.00, CAR_TANK_SPACE);
+        2:  117:      PUMP_UNIT.RETURN_NOZZLE(UNIT_1,UNIT_1_91);
+        2:  118:      SET_PUMPED_INFO_TO_CASH_REGISTER(UNIT_1);
+        -:  119:
+        2:  120:      payFuel(UNIT_1,UNIT_1_91,UNIT_1.TO_PAY);
+        -:  121:
+        -:  122:
+        2:  123:   end payFuel;
+        -:  124:
+        -:  125:   --     --==========================================================
+        -:  126:   --     --               REGISTRATION/NAMING
+        -:  127:   --     --==========================================================
+        -:  128:   --
+        2:  129:   procedure Register_Tests (T: in out TC) is
+        -:  130:      use AUnit.Test_Cases.Registration;
+        -:  131:   begin
+        2:  132:      Register_Routine (Test => T,
+        -:  133:                        Routine => Test_SET_PUMPED_INFO_TO_CASH_REGISTER'Access,
+        -:  134:                        Name => "Test_SET_PUMPED_INFO_TO_CASH_REGISTER");
+        2:  135:      Register_Routine (Test => T,
+        -:  136:                        Routine => payFuel'Access,
+        -:  137:                        Name => "payFuel");
+        2:  138:   end Register_Tests;
+        -:  139:
+        4:  140:   function Name (T: TC) return AUnit.Message_String is
+        -:  141:      pragma Unreferenced (T);
+        -:  142:   begin
+        4:  143:      return AUnit.Format ("Tests: Standard Tests");
+        -:  144:   end Name;
+        -:  145:
+        2:  146:end CASH_REGISTER.Test;

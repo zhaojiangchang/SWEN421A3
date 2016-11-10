@@ -1,0 +1,111 @@
+V "GNAT Lib v2016"
+A -gnatA
+A -ftest-coverage
+A -fprofile-arcs
+A -mtune=generic
+A -march=pentium4
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
+RV NO_FLOATING_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U cash_register%b	cash_register.adb	cb9bc16d NE OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W sprint%s		sprint.adb		sprint.ali
+W system%s		system.ads		system.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U cash_register%s	cash_register.ads	fa7420a3 EE NE OO PK IU
+W pump%s		pump.adb		pump.ali
+W pump_unit%s		pump_unit.adb		pump_unit.ali
+
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D cash_register.ads	20161110033836 06727bf1 cash_register%s
+D cash_register.adb	20161110033830 91e1ac99 cash_register%b
+D pump.ads		20161110075642 e5f7b109 pump%s
+D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
+D sprint.ads		20161110080914 751104d0 sprint%s
+D system.ads		20160516092930 2da59038 system%s
+D s-conca2.ads		20160516092930 02a0d7d0 system.concat_2%s
+D s-exctab.ads		20160516092930 54135002 system.exception_table%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+X 1 ada.ads
+16K9*Ada 19e8 5|2r6
+X 2 a-except.ads
+54K13*Exceptions 349e19 5|2w10
+X 4 cash_register.ads
+3K9*CASH_REGISTER 34l5 34e18 5|4b14 104l5 104t18
+7D9*FLOAT_NUMBER
+8A12*UNIT_ID_TYPE{string}<integer>
+13R9*PUMP_UNIT_ID 19e17 25r18 26r18 5|82r19
+15a10*ID{7|8A12} 5|27r38 28r51 46r41 47r53 85m18
+16f10*TO_PAY{6|6F9} 5|32m36 51m36 86m18
+17f10*PUMPED{6|6F9} 5|33m36 52m36 87m18
+18e10*FUEL{6|7E9} 5|88m18
+23R9*CASH_REGISTER 27e17 28r18
+25r10*UNIT_1{13R9} 5|27r31 28r44 32m29 33m29 89m20
+26r10*UNIT_2{13R9} 5|46r34 47r46 51m29 52m29
+28r4*cashRegister{23R9} 5|27r18 28r31 32m16 33m16 46r21 47r33 51m16 52m16
+. 89m7
+31U14*payFuel 31=23 31=61 31>87 5|10b14 74l8 74t15
+31r23 pumpUnit{7|21R9} 5|10b23 19r30 20r36 21r10 27r67 36m38 37m37 38m37
+. 39m16 46r70 55m38 56m37 57m37 58m16 68r37
+31r61 pump_r{6|20R9} 5|10b61 34m36 35m32 53m36 54m32
+31f87 AMOUNT{6|6F9} 5|10b87 30r54 31r16 49r56 50r17
+32U14*SET_PUMPED_INFO_TO_CASH_REGISTER 32=48 5|78b14 91l8 91t40
+32r48 pumpUnit{7|21R9} 5|79b7 84r36 85r40 87r49 88r45
+33V13*activePump{boolean} 33>24 33>52 5|93b13 102l8 102t18
+33a24 ID{7|8A12} 5|93b24 99r16
+33r52 pumpUnit{7|21R9} 5|93b52 96r10
+X 5 cash_register.adb
+11a7 id{7|8A12} 19m7 27r13 46r16
+12f7 topay{6|6F9} 20m7 29r48 31r25 48r50 50r26
+15X7 payFuelException 23r16 44r22 65r22
+81f7 topay{6|6F9} 84m7 86r28
+82r7 pumpUnitId{4|13R9} 85m7 86m7 87m7 88m7 89r30
+X 6 pump.ads
+1K9*PUMP 4|2w6 16r19 17r18 18r16 31r76 31r99 5|10r76 10r99 12r14 13r20 14r20
+. 21r40 34r16 34r43 35r16 53r16 53r43 54r16 81r14 6|59e9
+6F9*FLOAT_NUMBER<short_float> 4|16r24 17r23 31r104 5|10r104 12r19 13r25 81r19
+7E9*FUEL_TYPES 4|18r21 6|7e41
+10E9*STATE_TYPE 5|14r25 34r48 53r48 6|10e54
+10n46*Waiting{10E9} 5|21r45
+20R9*PUMP 4|31r81 5|10r81 6|30e17
+34U14*SET_PUMP_STATE 5|34s21 53s21
+35U14*SET_PUMPED 5|35s21 54s21
+X 7 pump_unit.ads
+3K9*PUMP_UNIT 4|1w6 15r13 31r40 32r65 33r28 33r62 5|10r40 11r11 19r13 20r15
+. 27r46 36r16 37r16 38r16 46r49 55r16 56r16 57r16 68r16 79r24 84r15 85r23
+. 87r28 88r26 93r28 93r62 7|92e14
+8A12*UNIT_ID_TYPE{string}<integer> 4|15r23 33r38 5|11r21 93r38
+21R9*PUMP_UNIT 4|31r50 32r75 33r72 5|10r50 79r34 93r72 7|36e17
+25b10*IS_PAID{boolean} 5|96r19
+29e10*PUMP_ACTIVE_STATE{6|10E9} 5|21r19
+34b10*ActivePump{boolean} 5|39m25 58m25
+41V13*GET_ID{8A12} 5|19s23 85s33
+42V13*GET_TO_PAY{6|6F9} 5|20s25 27s56 46s59 68s26 84s25
+43V13*GET_PUMPED{6|6F9} 5|87s38
+44V13*GET_FUEL{6|7E9} 5|88s36
+56U14*SET_IS_PAID 5|36s26 55s26
+57U14*SET_TO_PAY 5|38s26 57s26
+59U14*SET_PUMPED 5|37s26 56s26
+X 8 sprint.ads
+2K10*sPrint 5|1w6 1r18 8|13e11
+3U14*print 5|22s10 28s13 43s16 47s15 64s16 69s13 90s7 99s10
+4U14*print_float_type 5|29s13 30s13 48s15 49s15
+

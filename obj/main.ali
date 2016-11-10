@@ -1,0 +1,92 @@
+V "GNAT Lib v2016"
+M P W=b
+A -gnatA
+A -ftest-coverage
+A -fprofile-arcs
+A -mtune=generic
+A -march=pentium4
+P DB LC TF  ES ZX
+
+RN
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U main%b		main.adb		c315546e NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W cash_register%s	cash_register.adb	cash_register.ali
+W pump%s		pump.adb		pump.ali
+W pump_unit%s		pump_unit.adb		pump_unit.ali
+W sprint%s		sprint.adb		sprint.ali
+W taskrunner%s		taskrunner.ads		taskrunner.ali
+
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20160516092928 a87e2da7 ada.real_time%s
+D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
+D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
+D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D cash_register.ads	20161110033836 06727bf1 cash_register%s
+D cash_register_object.ads  20161110050352 341e4332 cash_register_object%s
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D i-c.ads		20160516092926 5421119b interfaces.c%s
+D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
+D main.adb		20161110034056 108887d4 main%b
+D pay_task.ads		20161110081616 b0ec603b pay_task%s
+D pump.ads		20161110075642 e5f7b109 pump%s
+D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
+D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
+D pump_unit_setup_task.ads  20161110043002 751c33c9 pump_unit_setup_task%s
+D send_pump_info_to_cashregister_task.ads  20161110050618 fb5f333c send_pump_info_to_cashregister_task%s
+D sprint.ads		20161110080914 751104d0 sprint%s
+D system.ads		20160516092930 2da59038 system%s
+D s-atacco.ads		20160516092930 4c36d12f system.address_to_access_conversions%s
+D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20160516092930 54135002 system.exception_table%s
+D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
+D s-multip.ads		20160516092926 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20160516092930 2e5b26a9 system.os_interface%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-soflin.ads		20160516092928 14e1eb6c system.soft_links%s
+D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
+D s-stausa.ads		20160516092930 017a0a05 system.stack_usage%s
+D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
+D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20160516092930 601f6b72 system.task_info%s
+D s-taspri.ads		20160516092930 6c1d93d4 system.task_primitives%s
+D s-taprop.ads		20160516092928 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20160516092932 0766baa7 system.tasking%s
+D s-tasres.ads		20160516092926 0c8ef6fb system.tasking.restricted%s
+D s-tarest.ads		20160516092932 128b2dbd system.tasking.restricted.stages%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+D s-win32.ads		20160516092926 b7f96285 system.win32%s
+D taskrunner.ads	20161110081404 6495021d taskrunner%s
+X 1 ada.ads
+16K9*Ada 19e8 15|5r6 5r23
+X 7 a-textio.ads
+49K13*Text_IO 471e16 15|5w10 5r27
+X 9 cash_register.ads
+3K9*CASH_REGISTER 34e18 15|3w6
+X 15 main.adb
+7U11*Main 7b11 175l5 175t9
+X 17 pump.ads
+1K9*PUMP 15|1w6 17|59e9
+X 18 pump_unit.ads
+3K9*PUMP_UNIT 15|2w6 18|92e14
+X 22 sprint.ads
+2K10*sPrint 15|4w6 4r18 22|13e11
+3U14*print 15|9s4
+X 33 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 41 s-tarest.ads
+221U14*Activate_All_Tasks_Sequential 222i<c,__gnat_activate_all_tasks>22
+X 46 taskrunner.ads
+8K9*taskRunner 15|6w6 46|13e15
+
