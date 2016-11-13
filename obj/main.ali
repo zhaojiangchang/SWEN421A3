@@ -12,7 +12,7 @@ RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		a51e140f NE OO SU
+U main%b		main.adb		9f7abc3c NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W sprint%s		sprint.adb		sprint.ali
@@ -27,9 +27,10 @@ D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
 D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
 D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
 D authorisation_task.ads  20161113073034 8b220a4c authorisation_task%s
+D car_object.ads	20161113095156 5eeac5f0 car_object%s
 D cash_register.ads	20161110033836 06727bf1 cash_register%s
 D cash_register_object.ads  20161110050352 341e4332 cash_register_object%s
-D enter_total_price_to_pump_task.ads  20161113082926 38d17b92 enter_total_price_to_pump_task%s
+D enter_amont_to_pump_task.ads  20161113094206 5c7e9cf0 enter_amont_to_pump_task%s
 D fuel_type_selection_task.ads  20161113074730 d59a9572 fuel_type_selection_task%s
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-c.ads		20160516092926 5421119b interfaces.c%s
@@ -38,11 +39,12 @@ D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
 D main.adb		20161113010620 4582f505 main%b
 D pay_task.ads		20161110081616 b0ec603b pay_task%s
 D pump.ads		20161110075642 e5f7b109 pump%s
-D pump_unit.ads		20161113083130 06b54e09 pump_unit%s
+D pump_unit.ads		20161113094812 83e3022e pump_unit%s
 D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
 D pump_unit_setup_task.ads  20161110043002 751c33c9 pump_unit_setup_task%s
 D send_pump_info_to_cashregister_task.ads  20161110050618 fb5f333c send_pump_info_to_cashregister_task%s
 D sprint.ads		20161110080914 751104d0 sprint%s
+D stat_pump_task.ads	20161113094308 2c2737c2 stat_pump_task%s
 D system.ads		20160516092930 2da59038 system%s
 D s-atacco.ads		20160516092930 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
@@ -66,21 +68,21 @@ D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
 D s-win32.ads		20160516092926 b7f96285 system.win32%s
-D taskrunner.ads	20161113083032 ade0100e taskrunner%s
+D taskrunner.ads	20161113095620 9784b83d taskrunner%s
 X 1 ada.ads
-16K9*Ada 19e8 18|5r6 5r23
+16K9*Ada 19e8 19|5r6 5r23
 X 7 a-textio.ads
-49K13*Text_IO 471e16 18|5w10 5r27
-X 18 main.adb
+49K13*Text_IO 471e16 19|5w10 5r27
+X 19 main.adb
 7U11*Main 7b11 175l5 175t9
-X 25 sprint.ads
-2K10*sPrint 18|4w6 4r18 25|13e11
-3U14*print 18|9s4
-X 36 s-stausa.ads
+X 26 sprint.ads
+2K10*sPrint 19|4w6 4r18 26|13e11
+3U14*print 19|9s4
+X 38 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 44 s-tarest.ads
+X 46 s-tarest.ads
 221U14*Activate_All_Tasks_Sequential 222i<c,__gnat_activate_all_tasks>22
-X 49 taskrunner.ads
-13K9*taskRunner 18|6w6 49|21e15
+X 51 taskrunner.ads
+16K9*taskRunner 19|6w6 51|24e15
 

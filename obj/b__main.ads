@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#a51e140f#;
+   u00001 : constant Version_32 := 16#9f7abc3c#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#b6df930e#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -281,7 +281,7 @@ package ada_main is
    pragma Export (C, u00122, "system__img_lluS");
    u00123 : constant Version_32 := 16#7dd5f64f#;
    pragma Export (C, u00123, "system__powten_tableS");
-   u00124 : constant Version_32 := 16#268d0636#;
+   u00124 : constant Version_32 := 16#8fddf772#;
    pragma Export (C, u00124, "taskrunnerS");
    u00125 : constant Version_32 := 16#84d61c1c#;
    pragma Export (C, u00125, "authorisation_taskB");
@@ -353,40 +353,46 @@ package ada_main is
    pragma Export (C, u00158, "ada__real_timeS");
    u00159 : constant Version_32 := 16#cb9bc16d#;
    pragma Export (C, u00159, "cash_registerB");
-   u00160 : constant Version_32 := 16#e53084f1#;
+   u00160 : constant Version_32 := 16#6066c8d6#;
    pragma Export (C, u00160, "cash_registerS");
-   u00161 : constant Version_32 := 16#3e2fda91#;
+   u00161 : constant Version_32 := 16#bb7996b6#;
    pragma Export (C, u00161, "pump_unitB");
-   u00162 : constant Version_32 := 16#e342ff00#;
+   u00162 : constant Version_32 := 16#6614b327#;
    pragma Export (C, u00162, "pump_unitS");
    u00163 : constant Version_32 := 16#326c38c3#;
    pragma Export (C, u00163, "cash_register_objectS");
-   u00164 : constant Version_32 := 16#365c2353#;
+   u00164 : constant Version_32 := 16#b30a6f74#;
    pragma Export (C, u00164, "pump_unit_objectsS");
-   u00165 : constant Version_32 := 16#d0161564#;
-   pragma Export (C, u00165, "enter_total_price_to_pump_taskB");
-   u00166 : constant Version_32 := 16#5a78229d#;
-   pragma Export (C, u00166, "enter_total_price_to_pump_taskS");
-   u00167 : constant Version_32 := 16#593ba7ed#;
-   pragma Export (C, u00167, "fuel_type_selection_taskB");
-   u00168 : constant Version_32 := 16#b733cc7d#;
-   pragma Export (C, u00168, "fuel_type_selection_taskS");
-   u00169 : constant Version_32 := 16#e64ce972#;
-   pragma Export (C, u00169, "pay_taskB");
-   u00170 : constant Version_32 := 16#d4f0773d#;
-   pragma Export (C, u00170, "pay_taskS");
-   u00171 : constant Version_32 := 16#f9390950#;
-   pragma Export (C, u00171, "pump_unit_setup_taskB");
-   u00172 : constant Version_32 := 16#c69bad05#;
-   pragma Export (C, u00172, "pump_unit_setup_taskS");
-   u00173 : constant Version_32 := 16#5aa2f286#;
-   pragma Export (C, u00173, "send_pump_info_to_cashregister_taskB");
-   u00174 : constant Version_32 := 16#9f43243a#;
-   pragma Export (C, u00174, "send_pump_info_to_cashregister_taskS");
-   u00175 : constant Version_32 := 16#ee101ba4#;
-   pragma Export (C, u00175, "system__memoryB");
-   u00176 : constant Version_32 := 16#74d8f60c#;
-   pragma Export (C, u00176, "system__memoryS");
+   u00165 : constant Version_32 := 16#38fe76d7#;
+   pragma Export (C, u00165, "car_objectS");
+   u00166 : constant Version_32 := 16#a62648fb#;
+   pragma Export (C, u00166, "enter_amont_to_pump_taskB");
+   u00167 : constant Version_32 := 16#3ed7c5ff#;
+   pragma Export (C, u00167, "enter_amont_to_pump_taskS");
+   u00168 : constant Version_32 := 16#593ba7ed#;
+   pragma Export (C, u00168, "fuel_type_selection_taskB");
+   u00169 : constant Version_32 := 16#b733cc7d#;
+   pragma Export (C, u00169, "fuel_type_selection_taskS");
+   u00170 : constant Version_32 := 16#e64ce972#;
+   pragma Export (C, u00170, "pay_taskB");
+   u00171 : constant Version_32 := 16#51a63b1a#;
+   pragma Export (C, u00171, "pay_taskS");
+   u00172 : constant Version_32 := 16#7c6f4577#;
+   pragma Export (C, u00172, "pump_unit_setup_taskB");
+   u00173 : constant Version_32 := 16#43cde122#;
+   pragma Export (C, u00173, "pump_unit_setup_taskS");
+   u00174 : constant Version_32 := 16#5aa2f286#;
+   pragma Export (C, u00174, "send_pump_info_to_cashregister_taskB");
+   u00175 : constant Version_32 := 16#1a15681d#;
+   pragma Export (C, u00175, "send_pump_info_to_cashregister_taskS");
+   u00176 : constant Version_32 := 16#8ef8cfaf#;
+   pragma Export (C, u00176, "stat_pump_taskB");
+   u00177 : constant Version_32 := 16#9387a913#;
+   pragma Export (C, u00177, "stat_pump_taskS");
+   u00178 : constant Version_32 := 16#ee101ba4#;
+   pragma Export (C, u00178, "system__memoryB");
+   u00179 : constant Version_32 := 16#74d8f60c#;
+   pragma Export (C, u00179, "system__memoryS");
    --  BEGIN ELABORATION ORDER
    --  ada%s
    --  ada.characters%s
@@ -542,11 +548,12 @@ package ada_main is
    --  system.tasking.restricted.stages%b
    --  pump%s
    --  pump_unit%s
+   --  car_object%s
    --  cash_register%s
    --  cash_register_object%s
    --  pump_unit_objects%s
    --  authorisation_task%s
-   --  enter_total_price_to_pump_task%s
+   --  enter_amont_to_pump_task%s
    --  fuel_type_selection_task%s
    --  pay_task%s
    --  pump_unit_setup_task%s
@@ -557,11 +564,13 @@ package ada_main is
    --  pump_unit_setup_task%b
    --  pay_task%b
    --  fuel_type_selection_task%b
-   --  enter_total_price_to_pump_task%b
+   --  enter_amont_to_pump_task%b
    --  authorisation_task%b
    --  cash_register%b
    --  pump_unit%b
    --  pump%b
+   --  stat_pump_task%s
+   --  stat_pump_task%b
    --  taskrunner%s
    --  main%b
    --  END ELABORATION ORDER

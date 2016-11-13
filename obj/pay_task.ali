@@ -60,7 +60,7 @@ W system.exception_table%s  s-exctab.adb	s-exctab.ali
 W system.standard_library%s  s-stalib.adb	s-stalib.ali
 W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
 
-U pay_task%s		pay_task.ads		d4f0773d EE NE OO PK
+U pay_task%s		pay_task.ads		51a63b1a EE NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W cash_register%s	cash_register.adb	cash_register.ali
@@ -91,7 +91,7 @@ D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
 D pay_task.ads		20161110081616 b0ec603b pay_task%s
 D pay_task.adb		20161110094518 32c56a98 pay_task%b
 D pump.ads		20161110075642 e5f7b109 pump%s
-D pump_unit.ads		20161113083130 06b54e09 pump_unit%s
+D pump_unit.ads		20161113094812 83e3022e pump_unit%s
 D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
 D sprint.ads		20161110080914 751104d0 sprint%s
 D system.ads		20160516092930 2da59038 system%s

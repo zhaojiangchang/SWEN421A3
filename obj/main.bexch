@@ -4,6 +4,7 @@ b__main.o
 C:\Users\JackyChang\Desktop\421A1\modellingpump.gpr
 20161108055650
 [BOUND OBJECT FILES]
+C:\Users\JackyChang\Desktop\421A1\obj\CAR_OBJECT.o
 C:\Users\JackyChang\Desktop\421A1\obj\Cash_Register_Object.o
 C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Objects.o
 C:\Users\JackyChang\Desktop\421A1\obj\sPrint.o
@@ -11,11 +12,12 @@ C:\Users\JackyChang\Desktop\421A1\obj\Send_Pump_Info_To_CashRegister_Task.o
 C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Setup_Task.o
 C:\Users\JackyChang\Desktop\421A1\obj\Pay_Task.o
 C:\Users\JackyChang\Desktop\421A1\obj\Fuel_Type_Selection_Task.o
-C:\Users\JackyChang\Desktop\421A1\obj\Enter_Total_Price_To_Pump_Task.o
+C:\Users\JackyChang\Desktop\421A1\obj\Enter_Amont_To_Pump_Task.o
 C:\Users\JackyChang\Desktop\421A1\obj\Authorisation_Task.o
 C:\Users\JackyChang\Desktop\421A1\obj\cash_register.o
 C:\Users\JackyChang\Desktop\421A1\obj\pump_unit.o
 C:\Users\JackyChang\Desktop\421A1\obj\pump.o
+C:\Users\JackyChang\Desktop\421A1\obj\Stat_Pump_Task.o
 C:\Users\JackyChang\Desktop\421A1\obj\TaskRunner.o
 C:\Users\JackyChang\Desktop\421A1\obj\main.o
 [GENERATED SOURCE FILES]

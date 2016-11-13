@@ -50,7 +50,7 @@ W ada.text_io%s		a-textio.adb		a-textio.ali
 W sprint%s		sprint.adb		sprint.ali
 W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
 
-U send_pump_info_to_cashregister_task%s  send_pump_info_to_cashregister_task.ads  9f43243a EE NE OO PK
+U send_pump_info_to_cashregister_task%s  send_pump_info_to_cashregister_task.ads  1a15681d EE NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W cash_register%s	cash_register.adb	cash_register.ali
@@ -79,7 +79,7 @@ D i-c.ads		20160516092926 5421119b interfaces.c%s
 D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
 D pump.ads		20161110075642 e5f7b109 pump%s
-D pump_unit.ads		20161113083130 06b54e09 pump_unit%s
+D pump_unit.ads		20161113094812 83e3022e pump_unit%s
 D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
 D send_pump_info_to_cashregister_task.ads  20161110050618 fb5f333c send_pump_info_to_cashregister_task%s
 D send_pump_info_to_cashregister_task.adb  20161110050722 ec8130be send_pump_info_to_cashregister_task%b

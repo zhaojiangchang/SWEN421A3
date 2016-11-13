@@ -33,15 +33,17 @@ package body ada_main is
    E128 : Short_Integer; pragma Import (Ada, E128, "system__tasking__restricted__stages_E");
    E109 : Short_Integer; pragma Import (Ada, E109, "pump_E");
    E162 : Short_Integer; pragma Import (Ada, E162, "pump_unit_E");
+   E165 : Short_Integer; pragma Import (Ada, E165, "car_object_E");
    E160 : Short_Integer; pragma Import (Ada, E160, "cash_register_E");
    E164 : Short_Integer; pragma Import (Ada, E164, "pump_unit_objects_E");
    E126 : Short_Integer; pragma Import (Ada, E126, "authorisation_task_E");
-   E166 : Short_Integer; pragma Import (Ada, E166, "enter_total_price_to_pump_task_E");
-   E168 : Short_Integer; pragma Import (Ada, E168, "fuel_type_selection_task_E");
-   E170 : Short_Integer; pragma Import (Ada, E170, "pay_task_E");
-   E172 : Short_Integer; pragma Import (Ada, E172, "pump_unit_setup_task_E");
-   E174 : Short_Integer; pragma Import (Ada, E174, "send_pump_info_to_cashregister_task_E");
+   E167 : Short_Integer; pragma Import (Ada, E167, "enter_amont_to_pump_task_E");
+   E169 : Short_Integer; pragma Import (Ada, E169, "fuel_type_selection_task_E");
+   E171 : Short_Integer; pragma Import (Ada, E171, "pay_task_E");
+   E173 : Short_Integer; pragma Import (Ada, E173, "pump_unit_setup_task_E");
+   E175 : Short_Integer; pragma Import (Ada, E175, "send_pump_info_to_cashregister_task_E");
    E107 : Short_Integer; pragma Import (Ada, E107, "sprint_E");
+   E177 : Short_Integer; pragma Import (Ada, E177, "stat_pump_task_E");
    E124 : Short_Integer; pragma Import (Ada, E124, "taskrunner_E");
 
    Local_Priority_Specific_Dispatching : constant String := "";
@@ -214,24 +216,28 @@ package body ada_main is
       E006 := E006 + 1;
       System.Tasking.Restricted.Stages'Elab_Body;
       E128 := E128 + 1;
+      CAR_OBJECT'ELAB_SPEC;
+      E165 := E165 + 1;
       PUMP_UNIT_OBJECTS'ELAB_SPEC;
       E164 := E164 + 1;
       E107 := E107 + 1;
       Send_Pump_Info_To_Cashregister_Task'Elab_Body;
-      E174 := E174 + 1;
+      E175 := E175 + 1;
       Pump_Unit_Setup_Task'Elab_Body;
-      E172 := E172 + 1;
+      E173 := E173 + 1;
       Pay_Task'Elab_Body;
-      E170 := E170 + 1;
+      E171 := E171 + 1;
       Fuel_Type_Selection_Task'Elab_Body;
-      E168 := E168 + 1;
-      Enter_Total_Price_To_Pump_Task'Elab_Body;
-      E166 := E166 + 1;
+      E169 := E169 + 1;
+      Enter_Amont_To_Pump_Task'Elab_Body;
+      E167 := E167 + 1;
       Authorisation_Task'Elab_Body;
       E126 := E126 + 1;
       E160 := E160 + 1;
       E162 := E162 + 1;
       E109 := E109 + 1;
+      Stat_Pump_Task'Elab_Body;
+      E177 := E177 + 1;
       Taskrunner'Elab_Spec;
       E124 := E124 + 1;
       Activate_All_Tasks_Sequential;
@@ -270,6 +276,7 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
+   --   C:\Users\JackyChang\Desktop\421A1\obj\CAR_OBJECT.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Cash_Register_Object.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Objects.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\sPrint.o
@@ -277,11 +284,12 @@ package body ada_main is
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Setup_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pay_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Fuel_Type_Selection_Task.o
-   --   C:\Users\JackyChang\Desktop\421A1\obj\Enter_Total_Price_To_Pump_Task.o
+   --   C:\Users\JackyChang\Desktop\421A1\obj\Enter_Amont_To_Pump_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Authorisation_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\cash_register.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\pump_unit.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\pump.o
+   --   C:\Users\JackyChang\Desktop\421A1\obj\Stat_Pump_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\TaskRunner.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\main.o
    --   -LC:\Users\JackyChang\Desktop\421A1\obj\

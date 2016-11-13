@@ -26,7 +26,7 @@ W system.concat_2%s	s-conca2.adb		s-conca2.ali
 W system.exception_table%s  s-exctab.adb	s-exctab.ali
 W system.standard_library%s  s-stalib.adb	s-stalib.ali
 
-U cash_register%s	cash_register.ads	e53084f1 EE NE OO PK IU
+U cash_register%s	cash_register.ads	6066c8d6 EE NE OO PK IU
 W pump%s		pump.adb		pump.ali
 W pump_unit%s		pump_unit.adb		pump_unit.ali
 
@@ -36,7 +36,7 @@ D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
 D cash_register.ads	20161110033836 06727bf1 cash_register%s
 D cash_register.adb	20161110033830 91e1ac99 cash_register%b
 D pump.ads		20161110075642 e5f7b109 pump%s
-D pump_unit.ads		20161113083130 06b54e09 pump_unit%s
+D pump_unit.ads		20161113094812 83e3022e pump_unit%s
 D sprint.ads		20161110080914 751104d0 sprint%s
 D system.ads		20160516092930 2da59038 system%s
 D s-conca2.ads		20160516092930 02a0d7d0 system.concat_2%s

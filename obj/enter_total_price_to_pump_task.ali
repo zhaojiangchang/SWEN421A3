@@ -42,7 +42,7 @@ R ada.execution_time.group_budgets
 R ada.execution_time.timers
 R system.multiprocessors.dispatching_domains
 
-U enter_total_price_to_pump_task%b  enter_total_price_to_pump_task.adb  d0161564 OO PK
+U enter_total_price_to_pump_task%b  enter_total_price_to_pump_task.adb  c19e3e54 OO PK
 W ada%s			ada.ads			ada.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
@@ -73,7 +73,7 @@ D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
 D cash_register.ads	20161110033836 06727bf1 cash_register%s
 D cash_register_object.ads  20161110050352 341e4332 cash_register_object%s
 D enter_total_price_to_pump_task.ads  20161113082926 38d17b92 enter_total_price_to_pump_task%s
-D enter_total_price_to_pump_task.adb  20161113083032 a5bb9ff2 enter_total_price_to_pump_task%b
+D enter_total_price_to_pump_task.adb  20161113083302 b433b4c2 enter_total_price_to_pump_task%b
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-c.ads		20160516092926 5421119b interfaces.c%s
 D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
