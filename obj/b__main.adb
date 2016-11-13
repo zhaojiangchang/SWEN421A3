@@ -17,29 +17,31 @@ package body ada_main is
    E089 : Short_Integer; pragma Import (Ada, E089, "ada__tags_E");
    E086 : Short_Integer; pragma Import (Ada, E086, "ada__streams_E");
    E063 : Short_Integer; pragma Import (Ada, E063, "interfaces__c_E");
-   E140 : Short_Integer; pragma Import (Ada, E140, "interfaces__c__strings_E");
+   E136 : Short_Integer; pragma Import (Ada, E136, "interfaces__c__strings_E");
    E025 : Short_Integer; pragma Import (Ada, E025, "system__exceptions_E");
    E105 : Short_Integer; pragma Import (Ada, E105, "system__file_control_block_E");
    E097 : Short_Integer; pragma Import (Ada, E097, "system__file_io_E");
    E100 : Short_Integer; pragma Import (Ada, E100, "system__finalization_root_E");
    E098 : Short_Integer; pragma Import (Ada, E098, "ada__finalization_E");
-   E153 : Short_Integer; pragma Import (Ada, E153, "system__task_info_E");
+   E149 : Short_Integer; pragma Import (Ada, E149, "system__task_info_E");
    E061 : Short_Integer; pragma Import (Ada, E061, "system__object_reader_E");
    E041 : Short_Integer; pragma Import (Ada, E041, "system__dwarf_lines_E");
    E017 : Short_Integer; pragma Import (Ada, E017, "system__secondary_stack_E");
    E036 : Short_Integer; pragma Import (Ada, E036, "system__traceback__symbolic_E");
-   E162 : Short_Integer; pragma Import (Ada, E162, "ada__real_time_E");
+   E158 : Short_Integer; pragma Import (Ada, E158, "ada__real_time_E");
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__text_io_E");
-   E132 : Short_Integer; pragma Import (Ada, E132, "system__tasking__restricted__stages_E");
-   E111 : Short_Integer; pragma Import (Ada, E111, "pump_E");
-   E127 : Short_Integer; pragma Import (Ada, E127, "pump_unit_E");
-   E107 : Short_Integer; pragma Import (Ada, E107, "cash_register_E");
+   E128 : Short_Integer; pragma Import (Ada, E128, "system__tasking__restricted__stages_E");
+   E109 : Short_Integer; pragma Import (Ada, E109, "pump_E");
+   E162 : Short_Integer; pragma Import (Ada, E162, "pump_unit_E");
+   E160 : Short_Integer; pragma Import (Ada, E160, "cash_register_E");
    E164 : Short_Integer; pragma Import (Ada, E164, "pump_unit_objects_E");
-   E130 : Short_Integer; pragma Import (Ada, E130, "pay_task_E");
-   E166 : Short_Integer; pragma Import (Ada, E166, "pump_unit_setup_task_E");
-   E168 : Short_Integer; pragma Import (Ada, E168, "send_pump_info_to_cashregister_task_E");
-   E109 : Short_Integer; pragma Import (Ada, E109, "sprint_E");
-   E128 : Short_Integer; pragma Import (Ada, E128, "taskrunner_E");
+   E126 : Short_Integer; pragma Import (Ada, E126, "authorisation_task_E");
+   E166 : Short_Integer; pragma Import (Ada, E166, "fuel_type_selection_task_E");
+   E168 : Short_Integer; pragma Import (Ada, E168, "pay_task_E");
+   E170 : Short_Integer; pragma Import (Ada, E170, "pump_unit_setup_task_E");
+   E172 : Short_Integer; pragma Import (Ada, E172, "send_pump_info_to_cashregister_task_E");
+   E107 : Short_Integer; pragma Import (Ada, E107, "sprint_E");
+   E124 : Short_Integer; pragma Import (Ada, E124, "taskrunner_E");
 
    Local_Priority_Specific_Dispatching : constant String := "";
    Local_Interrupt_States : constant String := "";
@@ -183,12 +185,12 @@ package body ada_main is
       Ada.Finalization'Elab_Spec;
       E098 := E098 + 1;
       System.Task_Info'Elab_Spec;
-      E153 := E153 + 1;
+      E149 := E149 + 1;
       System.Object_Reader'Elab_Spec;
       System.Dwarf_Lines'Elab_Spec;
       System.File_Io'Elab_Body;
       E097 := E097 + 1;
-      E140 := E140 + 1;
+      E136 := E136 + 1;
       E063 := E063 + 1;
       Ada.Tags'Elab_Body;
       E089 := E089 + 1;
@@ -205,26 +207,30 @@ package body ada_main is
       E036 := E036 + 1;
       Ada.Real_Time'Elab_Spec;
       Ada.Real_Time'Elab_Body;
-      E162 := E162 + 1;
+      E158 := E158 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E006 := E006 + 1;
       System.Tasking.Restricted.Stages'Elab_Body;
-      E132 := E132 + 1;
+      E128 := E128 + 1;
       PUMP_UNIT_OBJECTS'ELAB_SPEC;
       E164 := E164 + 1;
-      E109 := E109 + 1;
-      Send_Pump_Info_To_Cashregister_Task'Elab_Body;
-      E168 := E168 + 1;
-      Pump_Unit_Setup_Task'Elab_Body;
-      E166 := E166 + 1;
-      Pay_Task'Elab_Body;
-      E130 := E130 + 1;
       E107 := E107 + 1;
-      E127 := E127 + 1;
-      E111 := E111 + 1;
+      Send_Pump_Info_To_Cashregister_Task'Elab_Body;
+      E172 := E172 + 1;
+      Pump_Unit_Setup_Task'Elab_Body;
+      E170 := E170 + 1;
+      Pay_Task'Elab_Body;
+      E168 := E168 + 1;
+      Fuel_Type_Selection_Task'Elab_Body;
+      E166 := E166 + 1;
+      Authorisation_Task'Elab_Body;
+      E126 := E126 + 1;
+      E160 := E160 + 1;
+      E162 := E162 + 1;
+      E109 := E109 + 1;
       Taskrunner'Elab_Spec;
-      E128 := E128 + 1;
+      E124 := E124 + 1;
       Activate_All_Tasks_Sequential;
    end adainit;
 
@@ -267,6 +273,8 @@ package body ada_main is
    --   C:\Users\JackyChang\Desktop\421A1\obj\Send_Pump_Info_To_CashRegister_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Setup_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pay_Task.o
+   --   C:\Users\JackyChang\Desktop\421A1\obj\Fuel_Type_Selection_Task.o
+   --   C:\Users\JackyChang\Desktop\421A1\obj\Authorisation_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\cash_register.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\pump_unit.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\pump.o

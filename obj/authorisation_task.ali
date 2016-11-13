@@ -1,5 +1,4 @@
 V "GNAT Lib v2016"
-M P W=b
 A -gnatA
 A -ftest-coverage
 A -fprofile-arcs
@@ -8,15 +7,61 @@ A -march=pentium4
 P DB LC TF  ES ZX
 
 RN
+RR SIMPLE_BARRIERS
+RR NO_ABORT_STATEMENTS
+RR NO_ASYNCHRONOUS_CONTROL
+RR NO_CALENDAR
+RR NO_DYNAMIC_ATTACHMENT
+RR NO_DYNAMIC_PRIORITIES
+RR NO_ENTRY_QUEUE
+RV NO_FLOATING_POINT
 RV NO_IO
+RR NO_IMPLICIT_HEAP_ALLOCATIONS
+RR NO_LOCAL_TIMING_EVENTS
+RR NO_LOCAL_PROTECTED_OBJECTS
+RR NO_PROTECTED_TYPE_ALLOCATORS
+RR NO_RELATIVE_DELAY
+RR NO_REQUEUE_STATEMENTS
+RR NO_SELECT_STATEMENTS
+RR NO_SPECIFIC_TERMINATION_HANDLERS
+RV NO_STANDARD_STORAGE_POOLS
+RR NO_TASK_ALLOCATORS
+RR NO_TASK_ATTRIBUTES_PACKAGE
+RR NO_TASK_HIERARCHY
+RR NO_TASK_TERMINATION
+RV NO_TASKING
+RR NO_TERMINATE_ALTERNATIVES
+RV STATIC_PRIORITIES
 RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
 RV SPARK_05
+RR MAX_PROTECTED_ENTRIES=1
+RR MAX_SELECT_ALTERNATIVES=0
+RR MAX_TASK_ENTRIES=0
+RR MAX_ASYNCHRONOUS_SELECT_NESTING=0
+R ada.execution_time.group_budgets
+R ada.execution_time.timers
+R system.multiprocessors.dispatching_domains
 
-U main%b		main.adb		0454bade NE OO SU
+U authorisation_task%b	authorisation_task.adb	84d61c1c OO PK
 W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W sprint%s		sprint.adb		sprint.ali
-W taskrunner%s		taskrunner.ads		taskrunner.ali
+W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
+
+U authorisation_task%s	authorisation_task.ads	e98b5343 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+W cash_register%s	cash_register.adb	cash_register.ali
+W cash_register_object%s  cash_register_object.ads  cash_register_object.ali
+W pump%s		pump.adb		pump.ali
+W pump_unit_objects%s	pump_unit_objects.ads	pump_unit_objects.ali
+W system%s		system.ads		system.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.task_info%s	s-tasinf.adb		s-tasinf.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
 
 D ada.ads		20160516092928 3ffc8e18 ada%s
 D a-except.ads		20160516092928 291912d5 ada.exceptions%s
@@ -27,20 +72,16 @@ D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
 D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
 D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
 D authorisation_task.ads  20161113073034 8b220a4c authorisation_task%s
+D authorisation_task.adb  20161113073210 4288e754 authorisation_task%b
 D cash_register.ads	20161110033836 06727bf1 cash_register%s
 D cash_register_object.ads  20161110050352 341e4332 cash_register_object%s
-D fuel_type_selection_task.ads  20161113074730 d59a9572 fuel_type_selection_task%s
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-c.ads		20160516092926 5421119b interfaces.c%s
 D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
-D main.adb		20161113010620 4582f505 main%b
-D pay_task.ads		20161110081616 b0ec603b pay_task%s
 D pump.ads		20161110075642 e5f7b109 pump%s
 D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
 D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
-D pump_unit_setup_task.ads  20161110043002 751c33c9 pump_unit_setup_task%s
-D send_pump_info_to_cashregister_task.ads  20161110050618 fb5f333c send_pump_info_to_cashregister_task%s
 D sprint.ads		20161110080914 751104d0 sprint%s
 D system.ads		20160516092930 2da59038 system%s
 D s-atacco.ads		20160516092930 4c36d12f system.address_to_access_conversions%s
@@ -65,21 +106,44 @@ D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
 D s-win32.ads		20160516092926 b7f96285 system.win32%s
-D taskrunner.ads	20161113074612 0caabedf taskrunner%s
 X 1 ada.ads
-16K9*Ada 19e8 17|5r6 5r23
+16K9*Ada 19e8 9|4r6 4r26 10|2r6 2r23
+X 4 a-reatim.ads
+39K13*Real_Time 187e18 9|4w10 4r30
 X 7 a-textio.ads
-49K13*Text_IO 471e16 17|5w10 5r27
-X 17 main.adb
-7U11*Main 7b11 175l5 175t9
-X 24 sprint.ads
-2K10*sPrint 17|4w6 4r18 24|13e11
-3U14*print 17|9s4
-X 35 s-stausa.ads
+49K13*Text_IO 471e16 10|2w10 2r27
+X 9 authorisation_task.ads
+9K9*Authorisation_Task 13l5 13e23 10|4b14 31l5 31t23
+10T14*authorisation_Task 10d33 10d55 12l8 12e26 10|7b14 30l8 30t26
+10i33 Pri{21|101I12} 11r23
+10i55 unitID{positive} 10|11r10 20r13
+X 11 cash_register.ads
+3K9*CASH_REGISTER 9|8w6 11|34e18
+16f10*TO_PAY{17|6F9} 10|12r54 21r53
+25r10*UNIT_1{13R9} 10|12r47
+26r10*UNIT_2{13R9} 10|21r46
+X 12 cash_register_object.ads
+2K9*CASH_REGISTER_OBJECT 9|6w6 10|12r13 21r12 12|5e28
+4r4*cashRegister{11|23R9} 10|12r34 21r33
+X 17 pump.ads
+1K9*PUMP 9|7w6 10|5r17 17|59e9
+6F9*FLOAT_NUMBER<short_float> 10|5r22
+X 18 pump_unit.ads
+34b10*ActivePump{boolean} 10|13m43 22m43
+X 19 pump_unit_objects.ads
+2K9*PUMP_UNIT_OBJECTS 9|5w6 10|13r13 22r13 19|6e25
+4r4*PUMP_UNIT_1{18|21R9} 10|13m31
+5r4*PUMP_UNIT_2{18|21R9} 10|22m31
+X 20 sprint.ads
+2K10*sPrint 10|1w6 1r18 20|13e11
+3U14*print 10|14s13 16s13 23s13 25s13
+X 21 system.ads
+37K9*System 9|3w6 10r38 21|200e11
+100I12*Any_Priority{integer}
+101I12*Priority{100I12} 9|10r45
+X 31 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 43 s-tarest.ads
+X 39 s-tarest.ads
 221U14*Activate_All_Tasks_Sequential 222i<c,__gnat_activate_all_tasks>22
-X 48 taskrunner.ads
-12K9*taskRunner 17|6w6 48|20e15
 

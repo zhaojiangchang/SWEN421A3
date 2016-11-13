@@ -48,7 +48,7 @@ R ada.execution_time.group_budgets
 R ada.execution_time.timers
 R system.multiprocessors.dispatching_domains
 
-U pay_task%b		pay_task.adb		bbc1f3aa OO PK
+U pay_task%b		pay_task.adb		e64ce972 OO PK
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
@@ -89,7 +89,7 @@ D i-c.ads		20160516092926 5421119b interfaces.c%s
 D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
 D pay_task.ads		20161110081616 b0ec603b pay_task%s
-D pay_task.adb		20161110083158 6f487040 pay_task%b
+D pay_task.adb		20161110094518 32c56a98 pay_task%b
 D pump.ads		20161110075642 e5f7b109 pump%s
 D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
 D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s

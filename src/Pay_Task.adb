@@ -36,7 +36,7 @@ package body Pay_Task is
                   PUMP_UNIT.SET_IS_PAID(PUMP_UNIT_OBJECTS.PUMP_UNIT_1);
                   PUMP_UNIT.SET_PUMPED(PUMP_UNIT_OBJECTS.PUMP_UNIT_1, 0.00);
                   PUMP_UNIT.SET_TO_PAY(PUMP_UNIT_OBJECTS.PUMP_UNIT_1,0.00);
-                  PUMP_UNIT_OBJECTS.PUMP_UNIT_1.ActivePump:=True;
+                  PUMP_UNIT_OBJECTS.PUMP_UNIT_1.ActivePump:=False;
                elsif amountPayByCustomer > topay then
                   CASH_REGISTER_OBJECT.cashRegister.UNIT_1.TO_PAY:= 0.00;
                   CASH_REGISTER_OBJECT.cashRegister.UNIT_1.PUMPED:=0.00;
@@ -47,7 +47,7 @@ package body Pay_Task is
                   PUMP_UNIT.SET_IS_PAID(PUMP_UNIT_OBJECTS.PUMP_UNIT_1);
                   PUMP_UNIT.SET_PUMPED(PUMP_UNIT_OBJECTS.PUMP_UNIT_1, 0.00);
                   PUMP_UNIT.SET_TO_PAY(PUMP_UNIT_OBJECTS.PUMP_UNIT_1,0.00);
-                  PUMP_UNIT_OBJECTS.PUMP_UNIT_1.ActivePump:=True;
+                  PUMP_UNIT_OBJECTS.PUMP_UNIT_1.ActivePump:=False;
                   change:= amountPayByCustomer - topay;
                   print_float_type("unit 1 - paid changes: ", change);
                else

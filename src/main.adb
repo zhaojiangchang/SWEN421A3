@@ -1,6 +1,6 @@
-with PUMP;
-with PUMP_UNIT;
-with CASH_REGISTER;
+--with PUMP;
+--with PUMP_UNIT;
+--with CASH_REGISTER;
 with sPrint; use sPrint;
 with Ada.Text_IO; use Ada.Text_IO;
 with taskRunner;
