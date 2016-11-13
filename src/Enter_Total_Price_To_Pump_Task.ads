@@ -6,8 +6,8 @@ with PUMP_UNIT_OBJECTS;
 with CASH_REGISTER_OBJECT;
 with PUMP;
 with CASH_REGISTER;
-package Fuel_Type_Selection_Task is
-   task type fuel_Type_Selection_Task(Pri: system.Priority; unitID: Positive; fuelType: PUMP.FUEL_TYPES) is
+package Enter_Total_Price_To_Pump_Task is
+   task type enter_Total_Price_To_Pump_Task(Pri: system.Priority; unitID: Positive; total: Positive) is
       pragma Priority(Pri);
-   end fuel_Type_Selection_Task;
-end Fuel_Type_Selection_Task;
+   end enter_Total_Price_To_Pump_Task;
+end Enter_Total_Price_To_Pump_Task;

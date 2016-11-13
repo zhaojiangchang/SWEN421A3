@@ -36,10 +36,11 @@ package body ada_main is
    E160 : Short_Integer; pragma Import (Ada, E160, "cash_register_E");
    E164 : Short_Integer; pragma Import (Ada, E164, "pump_unit_objects_E");
    E126 : Short_Integer; pragma Import (Ada, E126, "authorisation_task_E");
-   E166 : Short_Integer; pragma Import (Ada, E166, "fuel_type_selection_task_E");
-   E168 : Short_Integer; pragma Import (Ada, E168, "pay_task_E");
-   E170 : Short_Integer; pragma Import (Ada, E170, "pump_unit_setup_task_E");
-   E172 : Short_Integer; pragma Import (Ada, E172, "send_pump_info_to_cashregister_task_E");
+   E166 : Short_Integer; pragma Import (Ada, E166, "enter_total_price_to_pump_task_E");
+   E168 : Short_Integer; pragma Import (Ada, E168, "fuel_type_selection_task_E");
+   E170 : Short_Integer; pragma Import (Ada, E170, "pay_task_E");
+   E172 : Short_Integer; pragma Import (Ada, E172, "pump_unit_setup_task_E");
+   E174 : Short_Integer; pragma Import (Ada, E174, "send_pump_info_to_cashregister_task_E");
    E107 : Short_Integer; pragma Import (Ada, E107, "sprint_E");
    E124 : Short_Integer; pragma Import (Ada, E124, "taskrunner_E");
 
@@ -217,12 +218,14 @@ package body ada_main is
       E164 := E164 + 1;
       E107 := E107 + 1;
       Send_Pump_Info_To_Cashregister_Task'Elab_Body;
-      E172 := E172 + 1;
+      E174 := E174 + 1;
       Pump_Unit_Setup_Task'Elab_Body;
-      E170 := E170 + 1;
+      E172 := E172 + 1;
       Pay_Task'Elab_Body;
-      E168 := E168 + 1;
+      E170 := E170 + 1;
       Fuel_Type_Selection_Task'Elab_Body;
+      E168 := E168 + 1;
+      Enter_Total_Price_To_Pump_Task'Elab_Body;
       E166 := E166 + 1;
       Authorisation_Task'Elab_Body;
       E126 := E126 + 1;
@@ -274,6 +277,7 @@ package body ada_main is
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pump_Unit_Setup_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Pay_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Fuel_Type_Selection_Task.o
+   --   C:\Users\JackyChang\Desktop\421A1\obj\Enter_Total_Price_To_Pump_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\Authorisation_Task.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\cash_register.o
    --   C:\Users\JackyChang\Desktop\421A1\obj\pump_unit.o

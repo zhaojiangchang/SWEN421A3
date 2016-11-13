@@ -14,8 +14,9 @@ with SPARK_Mode is
       record
          ACTIVED_PUMP: PUMP.PUMP;
          FUEL_TYPE: PUMP.FUEL_TYPES:=PUMP.U91;
-         AMOUNT: PUMP.FLOAT_NUMBER:=0.0;
-         COST: PUMP.FLOAT_NUMBER:=0.0;
+         ENTERED_PRICE: Positive:=1;
+         FUEL_AMOUNT: PUMP.FLOAT_NUMBER:=0.0;
+         FUEL_COST: PUMP.FLOAT_NUMBER:=0.0;
       end record;
 
    type PUMP_UNIT is

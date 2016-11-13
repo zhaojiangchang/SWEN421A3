@@ -50,7 +50,7 @@ W ada.text_io%s		a-textio.adb		a-textio.ali
 W sprint%s		sprint.adb		sprint.ali
 W system.tasking.restricted.stages%s  s-tarest.adb  s-tarest.ali
 
-U send_pump_info_to_cashregister_task%s  send_pump_info_to_cashregister_task.ads  80078068 EE NE OO PK
+U send_pump_info_to_cashregister_task%s  send_pump_info_to_cashregister_task.ads  9f43243a EE NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W cash_register%s	cash_register.adb	cash_register.ali
@@ -79,7 +79,7 @@ D i-c.ads		20160516092926 5421119b interfaces.c%s
 D i-cstrin.ads		20160516092930 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
 D pump.ads		20161110075642 e5f7b109 pump%s
-D pump_unit.ads		20161110080546 19f1ea5b pump_unit%s
+D pump_unit.ads		20161113083130 06b54e09 pump_unit%s
 D pump_unit_objects.ads	20161110042848 30e96d5a pump_unit_objects%s
 D send_pump_info_to_cashregister_task.ads  20161110050618 fb5f333c send_pump_info_to_cashregister_task%s
 D send_pump_info_to_cashregister_task.adb  20161110050722 ec8130be send_pump_info_to_cashregister_task%b
@@ -129,18 +129,18 @@ X 15 pump.ads
 1K9*PUMP 59e9 18|5w6 19|8r14
 6F9*FLOAT_NUMBER<short_float> 19|8r19
 X 16 pump_unit.ads
-3K9*PUMP_UNIT 92e14 18|4w6 4r21 19|13r18 14r26 16r31 17r29 21r18 22r26 24r31
+3K9*PUMP_UNIT 93e14 18|4w6 4r21 19|13r18 14r26 16r31 17r29 21r18 22r26 24r31
 . 25r29
 8A12*UNIT_ID_TYPE{string}<integer>
-41V13*GET_ID{8A12} 19|14s36 22s36
-42V13*GET_TO_PAY{15|6F9} 19|13s28 21s28
-43V13*GET_PUMPED{15|6F9} 19|16s41 24s41
-44V13*GET_FUEL{15|7E9} 19|17s39 25s39
+42V13*GET_ID{8A12} 19|14s36 22s36
+43V13*GET_TO_PAY{15|6F9} 19|13s28 21s28
+44V13*GET_PUMPED{15|6F9} 19|16s41 24s41
+45V13*GET_FUEL{15|7E9} 19|17s39 25s39
 X 17 pump_unit_objects.ads
 2K9*PUMP_UNIT_OBJECTS 6e25 18|8w6 19|13r39 14r43 16r52 17r48 21r39 22r43
 . 24r52 25r48
-4r4*PUMP_UNIT_1{16|21R9} 19|13r57 14r61 16r70 17r66
-5r4*PUMP_UNIT_2{16|21R9} 19|21r57 22r61 24r70 25r66
+4r4*PUMP_UNIT_1{16|22R9} 19|13r57 14r61 16r70 17r66
+5r4*PUMP_UNIT_2{16|22R9} 19|21r57 22r61 24r70 25r66
 X 18 send_pump_info_to_cashregister_task.ads
 10K9*Send_Pump_Info_To_CashRegister_Task 15l5 15e40 19|4b14 33l5 33t40
 12T14*send_Pump_Info_To_CashRegister_Task 12d50 12d72 14l8 14e43 19|6b14

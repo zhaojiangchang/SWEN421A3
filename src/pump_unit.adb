@@ -350,8 +350,8 @@ with SPARK_Mode is
                pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.01 ;
                pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.01 * PUMP.GET_UNIT_PRICE(pump_r));
                pumpUnit.Display.FUEL_TYPE := pumpUnit.PUMP_ACTIVE_FUEL;
-               pumpUnit.Display.AMOUNT:= pumped;
-               pumpUnit.Display.COST:=pumpUnit.TO_PAY;
+               pumpUnit.Display.FUEL_AMOUNT:= pumped;
+               pumpUnit.Display.FUEL_COST:=pumpUnit.TO_PAY;
                if CAR_TANK_SPACE -0.01 >0.00 then
                   CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.01;
 
@@ -393,8 +393,8 @@ with SPARK_Mode is
                pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.01 ;
                pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.01 * PUMP.GET_UNIT_PRICE(pump_r));
                pumpUnit.Display.FUEL_TYPE := pumpUnit.PUMP_ACTIVE_FUEL;
-               pumpUnit.Display.AMOUNT:= pumped;
-               pumpUnit.Display.COST:=pumpUnit.TO_PAY;
+               pumpUnit.Display.FUEL_AMOUNT:= pumped;
+               pumpUnit.Display.FUEL_COST:=pumpUnit.TO_PAY;
                if CAR_TANK_SPACE -0.01 >0.00 then
                   CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.01;
                else
