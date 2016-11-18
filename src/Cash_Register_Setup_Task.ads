@@ -1,14 +1,13 @@
 pragma Profile(Ravenscar);
 pragma Partition_Elaboration_Policy (Sequential);
 with System;
+with PUMP_UNIT;
 with Ada.Real_Time;  use Ada.Real_Time;
 with PUMP_UNIT_OBJECTS;
-with PUMP_UNIT;
 with CASH_REGISTER_OBJECT;
-with PUMP;
 with CASH_REGISTER;
-package Authorisation_Task is
-   task type authorisation_Task(Pri: system.Priority; unitID: Positive) is
+package Cash_Register_Setup_Task  is
+   task type cash_Register_Setup_Task (Pri: system.Priority) is
       pragma Priority(Pri);
-   end authorisation_Task;
-end Authorisation_Task;
+   end cash_Register_Setup_Task ;
+end Cash_Register_Setup_Task ;

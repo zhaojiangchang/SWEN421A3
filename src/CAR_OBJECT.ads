@@ -3,7 +3,7 @@ with PUMP_UNIT;
 
 package CAR_OBJECT
 with SPARK_Mode is
-
+   type Cars is (car1, car2);
     type Car is
       record
          TANK_SIZE: PUMP.FLOAT_NUMBER:=30.0;

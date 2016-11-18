@@ -24,6 +24,9 @@ with SPARK_Mode is
       record
          UNIT_1: PUMP_UNIT_ID;
          UNIT_2: PUMP_UNIT_ID;
+         STATE:PUMP_UNIT.PUMP_UNIT_STATES:=PUMP_UNIT.No;
+         IS_SETUP: Boolean:=False;
+         ActiveCashRegister: Boolean:=False;
       end record;
    cashRegister: CASH_REGISTER;
 
@@ -31,4 +34,6 @@ with SPARK_Mode is
    procedure payFuel (pumpUnit: in out PUMP_UNIT.PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in  PUMP.FLOAT_NUMBER);
    procedure SET_PUMPED_INFO_TO_CASH_REGISTER (pumpUnit: in out PUMP_UNIT.PUMP_UNIT);
    function activePump(ID: PUMP_UNIT.UNIT_ID_TYPE; pumpUnit: PUMP_UNIT.PUMP_UNIT) return Boolean;
+   procedure initial(cr: in out CASH_REGISTER);
+
 end CASH_REGISTER;

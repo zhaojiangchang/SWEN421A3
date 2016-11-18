@@ -13,7 +13,7 @@ with SPARK_Mode is
    is
    begin
       pump_r.PUMP_STATE := stateType;
-      print_state_type("Chage State: " , stateType);
+      --print_state_type("Chage State: " , stateType);
 
    end SET_PUMP_STATE;
 
@@ -27,7 +27,7 @@ with SPARK_Mode is
    is
    begin
       pump_r.NOZZLE_STATE := nozzleType;
-      print_nozzle_type("Chage Nozzle State: ", nozzleType);
+     -- print_nozzle_type("Chage Nozzle State: ", nozzleType);
 
    end SET_PUMP_NOZZLE_STATE;
 

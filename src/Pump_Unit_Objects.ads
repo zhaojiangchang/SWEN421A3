@@ -1,6 +1,7 @@
 with PUMP_UNIT;
 package PUMP_UNIT_OBJECTS
 with SPARK_Mode is
+   type PUMP_UNITS is (pumpUnit1, pumpUnit2);
    PUMP_UNIT_1: PUMP_UNIT.PUMP_UNIT;
    PUMP_UNIT_2: PUMP_UNIT.PUMP_UNIT;
    end PUMP_UNIT_OBJECTS;

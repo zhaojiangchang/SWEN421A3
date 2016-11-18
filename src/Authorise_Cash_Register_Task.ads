@@ -7,8 +7,8 @@ with PUMP_UNIT;
 with CASH_REGISTER_OBJECT;
 with PUMP;
 with CASH_REGISTER;
-package Authorisation_Task is
-   task type authorisation_Task(Pri: system.Priority; unitID: Positive) is
+package Authorise_Cash_Register_Task is
+   task type authorise_Cash_Register_Task(Pri: system.Priority) is
       pragma Priority(Pri);
-   end authorisation_Task;
-end Authorisation_Task;
+   end authorise_Cash_Register_Task;
+end Authorise_Cash_Register_Task;

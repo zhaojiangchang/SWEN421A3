@@ -6,7 +6,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with taskRunner;
 procedure Main is
    begin
-   print("Program start");
+   print("");
 --  --     type UNIT is new PUMP_UNIT;
 --     use all type PUMP.STATE_TYPE;
 --     use all type PUMP.FUEL_TYPES;

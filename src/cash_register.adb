@@ -36,7 +36,7 @@ with SPARK_Mode is
                PUMP_UNIT.SET_IS_PAID(pumpUnit);
                PUMP_UNIT.SET_PUMPED(pumpUnit, 0.00);
                PUMP_UNIT.SET_TO_PAY(pumpUnit,0.00);
-               pumpUnit.ActivePump:=True;
+               pumpUnit.ActivePumpUnit:=False;
                --              PUMP_UNIT.PUMP_UNIT
 
             else
@@ -55,7 +55,7 @@ with SPARK_Mode is
                PUMP_UNIT.SET_IS_PAID(pumpUnit);
                PUMP_UNIT.SET_PUMPED(pumpUnit, 0.00);
                PUMP_UNIT.SET_TO_PAY(pumpUnit,0.00);
-               pumpUnit.ActivePump:=True;
+               pumpUnit.ActivePumpUnit:=False;
 
 
                --              PUMP_UNIT.PUMP_UNIT
@@ -100,5 +100,23 @@ with SPARK_Mode is
          return False;
       end if;
    end activePump;
+ procedure initial(cr: in out CASH_REGISTER)
+   is
+   begin
+      print("Initialize Cash Register");
+      cr.UNIT_1.ID:="      ";
+      cr.UNIT_1.TO_PAY:=0.00;
+      cr.UNIT_1.PUMPED:=0.00;
+      cr.UNIT_1.FUEL:=PUMP.U91;
+
+      cr.UNIT_2.ID:="      ";
+      cr.UNIT_2.TO_PAY:=0.00;
+      cr.UNIT_2.PUMPED:=0.00;
+      cr.UNIT_2.FUEL:=PUMP.U91;
+
+      cr.STATE:=PUMP_UNIT.Closed;
+      cr.ActiveCashRegister:=False;
+      cr.IS_SETUP:=False;
+   end initial;
 
 end CASH_REGISTER;

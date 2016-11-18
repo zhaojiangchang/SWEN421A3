@@ -1,11 +1,11 @@
 with PUMP;
-
 package PUMP_UNIT
 with SPARK_Mode is
    --     type PUMP_UNIT is private;
    type tempTemp is new PUMP.PUMP;
    type FLOAT_NUMBER is delta 0.01 digits 10;
    subtype UNIT_ID_TYPE is String(1..6);
+   type PUMP_UNIT_STATES is (No, Authorised, Inoperative, Closed, Idle, Calling, Started, Fuelling, SuspendedFuelling, SendInfoToCR, Pay);
    --     package P is new PUMP;
    use all type PUMP.NOZZLE_TYPE;
    use all type PUMP.FLOAT_NUMBER;
@@ -32,8 +32,13 @@ with SPARK_Mode is
          PUMP_91: PUMP.PUMP;
          PUMP_95: PUMP.PUMP;
          PUMP_Diesel: PUMP.PUMP;
-         ActivePump: Boolean:=False;
+         ActivePumpUnit: Boolean:=False;
          Display: PUMP_DISPLAY;
+         IS_PUMP_UNIT_SETUP: Boolean:=False;
+         IS_PUMP_SELECTED: Boolean:=False;
+         IS_AMOUNT_ENTERD: Boolean:=False;
+         STATE: PUMP_UNIT_STATES:=No;
+
       end record;
 
    --function
@@ -78,6 +83,7 @@ with SPARK_Mode is
 
 
    procedure START_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in PUMP.FLOAT_NUMBER; CAR_TANK_SPACE: in out PUMP.FLOAT_NUMBER)
+--     procedure START_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in PUMP.FLOAT_NUMBER; CAR: in out CAR_OBJECT.Car)
      with
        Pre => (PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 1 and PUMP.NOZZLE_TYPE'Pos(PUMP.GET_CURRENT_NOZZLE_STATE(pump_r))=1),
      Post => (pumpUnit.PUMP_ACTIVE_STATE = PUMP.Ready);
@@ -87,6 +93,7 @@ with SPARK_Mode is
        Pre => (PUMP.STATE_TYPE'Pos(PUMP.GET_STATE(pump_r)) = 2 and PUMP.NOZZLE_TYPE'Pos(PUMP.GET_CURRENT_NOZZLE_STATE(pump_r)) =3),
      Post => (pumpUnit.PUMP_NOZZLE_STATE = PUMP.Stop and pumpUnit.PUMP_ACTIVE_STATE = PUMP.Ready);
 
+   procedure initial(PU: in out PUMP_UNIT);
 
 private
 

@@ -27,6 +27,7 @@ with SPARK_Mode is
          NOZZLE_STATE: NOZZLE_TYPE:=NOZZLE_TYPE'Val(0);
          UNIT_PRICE: FLOAT_NUMBER:=0.00;
          FUEL_TYPE: FUEL_TYPES:= FUEL_TYPES'Val(0);
+         SENSOR:Boolean:=False;
       end record;
 
    --procedures

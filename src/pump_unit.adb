@@ -316,6 +316,7 @@ with SPARK_Mode is
    --   START_PUMPING   --
    -----------------------
    procedure START_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in PUMP.FLOAT_NUMBER; CAR_TANK_SPACE: in out PUMP.FLOAT_NUMBER)
+--     procedure START_PUMPING (pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP; AMOUNT: in PUMP.FLOAT_NUMBER; CAR: in out CAR_OBJECT.Car)
    is
       use all type PUMP.FLOAT_NUMBER;
       tankSize: PUMP.FLOAT_NUMBER;
@@ -323,11 +324,10 @@ with SPARK_Mode is
       SENSOR: Boolean;
       temp: PUMP.FLOAT_NUMBER;
       startPumpingException : Exception;
-
    begin
       temp:=0.00;
       pumped:=0.00;
-      SENSOR := False;
+      SENSOR := pump_r.SENSOR;
       if pumpUnit.PUMP_ACTIVE_STATE = PUMP.ready  and pump_r.PUMP_STATE = PUMP.Ready then
          tankSize :=  PUMP.GET_TANKS_SIZE(pump_r);
          print_float_type("tank size: ", tankSize);
@@ -336,6 +336,7 @@ with SPARK_Mode is
             Raise startPumpingException;
          end if;
          if CAR_TANK_SPACE = 0.00 then
+            pumpUnit.STATE:=SuspendedFuelling;
             print("car tank full can not pumping");
             Raise startPumpingException;
          end if;
@@ -346,28 +347,31 @@ with SPARK_Mode is
             PUMP.SET_PUMP_NOZZLE_STATE(pump_r, PUMP.NOZZLE_TYPE'Val(3));
             PUMP.SET_PUMP_STATE(pump_r,PUMP.STATE_TYPE'Val(2));
             while CAR_TANK_SPACE>0.00 and tankSize >temp and SENSOR = False and pumped <= AMOUNT loop
-               pumped:= pumped +0.01;
-               pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.01 ;
-               pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.01 * PUMP.GET_UNIT_PRICE(pump_r));
+               pumped:= pumped +0.1;
+               print_float_type("pumped: ", pumped);
+               pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.1 ;
+               pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.1 * PUMP.GET_UNIT_PRICE(pump_r));
                pumpUnit.Display.FUEL_TYPE := pumpUnit.PUMP_ACTIVE_FUEL;
                pumpUnit.Display.FUEL_AMOUNT:= pumped;
                pumpUnit.Display.FUEL_COST:=pumpUnit.TO_PAY;
-               if CAR_TANK_SPACE -0.01 >0.00 then
-                  CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.01;
-
+               if CAR_TANK_SPACE -0.1 >0.00 then
+                  CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.1;
                else
                   SENSOR := True;
+                  pumpUnit.STATE:=SuspendedFuelling;
                   STOP_PUMPING(pumpUnit, pump_r);
                end if;
                --                 print_float_type("pumping: " , pumped);
                --                 print_float_type("car tank space left: ",CAR_TANK_SPACE);
                --                 print_float_type("Amount To Pay: ", pumpUnit.TO_PAY);
-               PUMP.REMOVE_PETROL_RESERVOIR(pump_r,0.01);
+               PUMP.REMOVE_PETROL_RESERVOIR(pump_r,0.1);
                tankSize := PUMP.GET_TANKS_SIZE(pump_r);
                if tankSize <= 0.00 then
+                  pumpUnit.STATE:=SuspendedFuelling;
                   STOP_PUMPING(pumpUnit, pump_r);
                   print("tank empty stop pumping");
                elsif pumped>= AMOUNT then
+                  pumpUnit.STATE:=SuspendedFuelling;
                   print("pumped given amount");
                   STOP_PUMPING(pumpUnit, pump_r);
                end if;
@@ -384,19 +388,20 @@ with SPARK_Mode is
                Raise startPumpingException;
             end if;
             if CAR_TANK_SPACE <= 0.00 then
+               pumpUnit.STATE:=SuspendedFuelling;
                print("car tank full can not pumping");
                Raise startPumpingException;
             end if;
             while SENSOR = False and tankSize > 0.00 loop
 
                --                 pumped:= pumped +0.01;
-               pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.01 ;
-               pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.01 * PUMP.GET_UNIT_PRICE(pump_r));
+               pumpUnit.PUMPED :=pumpUnit.PUMPED + 0.1 ;
+               pumpUnit.TO_PAY := pumpUnit.TO_PAY + (0.1 * PUMP.GET_UNIT_PRICE(pump_r));
                pumpUnit.Display.FUEL_TYPE := pumpUnit.PUMP_ACTIVE_FUEL;
                pumpUnit.Display.FUEL_AMOUNT:= pumped;
                pumpUnit.Display.FUEL_COST:=pumpUnit.TO_PAY;
-               if CAR_TANK_SPACE -0.01 >0.00 then
-                  CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.01;
+               if CAR_TANK_SPACE -0.1 >0.00 then
+                  CAR_TANK_SPACE:= CAR_TANK_SPACE - 0.1;
                else
                   SENSOR := True;
                   STOP_PUMPING(pumpUnit, pump_r);
@@ -406,13 +411,14 @@ with SPARK_Mode is
                --                 print_float_type("Amount To Pay: ", pumpUnit.TO_PAY);               PUMP.REMOVE_PETROL_RESERVOIR(pump_r,0.01);
                tankSize := PUMP.GET_TANKS_SIZE(pump_r);
                if tankSize <= 0.00 then
+                  pumpUnit.STATE:=SuspendedFuelling;
                   STOP_PUMPING(pumpUnit, pump_r);
                   print("tank empty stop pumping");
                end if;
             end loop;
          end if;
       else
-         print("you can not pumping - only ready state -> pumping");
+        -- print("you can not pumping - only ready state -> pumping or tank already full");
 
          Raise startPumpingException;
 
@@ -424,17 +430,35 @@ with SPARK_Mode is
    procedure STOP_PUMPING(pumpUnit: in out PUMP_UNIT; pump_r: in out PUMP.PUMP) is
       stopPumpingException : Exception;
    begin
-      if PUMP.STATE_TYPE'Image(pumpUnit.PUMP_ACTIVE_STATE) = "PUMPING"  and PUMP.STATE_TYPE'Image(PUMP.GET_STATE(pump_r)) = "PUMPING" then
+      if PUMP.STATE_TYPE'Image(pumpUnit.PUMP_ACTIVE_STATE) = "PUMPING"
+        and PUMP.STATE_TYPE'Image(PUMP.GET_STATE(pump_r)) = "PUMPING" then
          pumpUnit.PUMP_ACTIVE_STATE := PUMP.STATE_TYPE'Val(1);
          pumpUnit.PUMP_NOZZLE_STATE:= PUMP.NOZZLE_TYPE'Val(4);
          PUMP.SET_PUMP_STATE(pump_r,PUMP.STATE_TYPE'Val(1));
          PUMP.SET_PUMP_NOZZLE_STATE(pump_r, PUMP.NOZZLE_TYPE'Val(4));
-         print("stop pumping");
+         print("Tank full - stop pumping");
       else
          Raise stopPumpingException;
 
       end if;
 
    end STOP_PUMPING;
-
+procedure initial(PU: in out PUMP_UNIT)
+   is
+   begin
+      PU.IS_USING:=False;
+      PU.IS_PAID:=True;
+      PU.TO_PAY:=0.00;
+      PU.PUMPED:=0.00;
+      PU.ActivePumpUnit:=False;
+      PU.IS_PUMP_UNIT_SETUP:=False;
+      PU.IS_PUMP_SELECTED:=False;
+      PU.IS_AMOUNT_ENTERD:=False;
+      PU.State:=Closed;
+      PU.Display.ACTIVED_PUMP:=PU.PUMP_91;
+      PU.Display.FUEL_TYPE:=PUMP.U91;
+      PU.Display.ENTERED_AMOUNT:=0.00;
+      PU.Display.FUEL_AMOUNT:=0.00;
+      PU.Display.FUEL_COST:=0.00;
+   end initial;
 end PUMP_UNIT;
